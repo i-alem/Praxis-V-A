@@ -2,10 +2,10 @@ export class Footer {
     constructor() {
         this.contactInfo = {
             address: {
-                street: "Musterstraße 123",
-                city: "12345 Musterstadt"
+                street: "Kaiserdamm 9",
+                city: "14059 Berlin"
             },
-            phone: "+49 123 456 789",
+            phone: "+49 176 62800600",
             email: "info@praxis-v-a.de"
         };
 
@@ -84,7 +84,7 @@ export class Footer {
                     </div>
                     
                     <div class="footer-content">
-                        <p>&copy; 2024 Praxis-V-A. Alle Rechte vorbehalten.</p>
+                        <p>&copy; 2024 Praxis Vital & Active. Alle Rechte vorbehalten.</p>
                         <div class="footer-legal">
                             <a href="/impressum.html">Impressum</a>
                             <a href="/datenschutz.html">Datenschutz</a>
