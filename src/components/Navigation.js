@@ -71,7 +71,7 @@ export class Navigation {
                                 <path d="M20 18C18 16 15 16 13 18C11 20 11 23 13 25L20 32L27 25C29 23 29 20 27 18C25 16 22 16 20 18Z" fill="#3b82f6"/>
                                 <circle cx="20" cy="20" r="2" fill="#1e40af"/>
                             </svg>
-                            <span class="logo-text">Praxis-V-A</span>
+                            <span class="logo-text">Praxis Vital & Active</span>
                         </a>
                     </div>
                     <div class="nav-menu" id="nav-menu">
