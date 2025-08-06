@@ -394,11 +394,6 @@ p {
 }
 
 /* Contact Section */
-.contact {
-    padding: 80px 0;
-    background: white;
-}
-
 .contact-form-container {
     max-width: 800px;
     margin: 0 auto;
