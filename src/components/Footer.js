@@ -60,11 +60,7 @@ export class Footer {
                     <div class="footer-main">
                         <div class="footer-section info">
                             <div class="footer-logo">
-                                <svg class="butterfly-logo" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M20 8C18 6 15 6 13 8C11 10 11 13 13 15L20 22L27 15C29 13 29 10 27 8C25 6 22 6 20 8Z" fill="#2563eb"/>
-                                    <path d="M20 18C18 16 15 16 13 18C11 20 11 23 13 25L20 32L27 25C29 23 29 20 27 18C25 16 22 16 20 18Z" fill="#3b82f6"/>
-                                    <circle cx="20" cy="20" r="2" fill="#1e40af"/>
-                                </svg>
+                                <img src="/Logo.svg" alt="Praxis Vital & Active Logo" class="butterfly-logo">
                                 <span>Praxis Vital & Active</span>
                             </div>
                             <p class="footer-description">Ihre moderne Physiotherapiepraxis für ganzheitliche Behandlung und nachhaltige Rehabilitation.</p>

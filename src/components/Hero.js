@@ -8,7 +8,7 @@ export class Hero {
                         <p class="hero-subtitle">Ihre moderne Physiotherapiepraxis für ganzheitliche Behandlung und nachhaltige Rehabilitation</p>
                         <div class="hero-buttons">
                             <a href="https://medifox.de/termine" target="_blank" class="btn btn-primary">Termin vereinbaren</a>
-                            <a href="/#services" class="btn btn-secondary">Unsere Leistungen</a>
+                            <a href="#services" class="btn btn-secondary">Unsere Leistungen</a>
                         </div>
                     </div>
                     <div class="hero-image">
