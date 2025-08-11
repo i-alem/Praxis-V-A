@@ -3,12 +3,7 @@ export function createNavigation() {
         <nav class="navbar">
             <div class="nav-container">
                 <a href="/" class="nav-logo">
-                    <svg width="40" height="40" viewBox="0 0 100 100" fill="none">
-                        <circle cx="50" cy="50" r="45" fill="#3f5068"/>
-                        <path d="M30 40h40v20H30z" fill="white"/>
-                        <circle cx="40" cy="50" r="5" fill="#3f5068"/>
-                        <circle cx="60" cy="50" r="5" fill="#3f5068"/>
-                    </svg>
+                    <img src="src/img/logo-light.svg" alt="Praxis Vital & Active Logo" width="40" height="40">
                     <span>Praxis Vital & Active</span>
                 </a>
                 <div class="nav-menu" id="nav-menu">
