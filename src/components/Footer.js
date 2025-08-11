@@ -5,12 +5,7 @@ export function createFooter() {
                 <div class="footer-main">
                     <div class="footer-section info">
                         <div class="footer-logo">
-                            <svg width="40" height="40" viewBox="0 0 100 100" fill="none">
-                                <circle cx="50" cy="50" r="45" fill="white"/>
-                                <path d="M30 40h40v20H30z" fill="#3f5068"/>
-                                <circle cx="40" cy="50" r="5" fill="white"/>
-                                <circle cx="60" cy="50" r="5" fill="white"/>
-                            </svg>
+                            <img src="src/img/logo-dark.svg" alt="Praxis Vital & Active Logo" width="40" height="40">
                             <span>Praxis Vital & Active</span>
                         </div>
                         <p class="footer-description">Ihre moderne Physiotherapiepraxis für ganzheitliche Behandlung und nachhaltige Rehabilitation.</p>
