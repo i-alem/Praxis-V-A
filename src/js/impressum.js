@@ -1,7 +1,7 @@
-import { createNavigation, initNavigation } from './components/Navigation.js';
-import { createFooter } from './components/Footer.js';
-import { createLegalHeader } from './components/LegalHeader.js';
-import { createImpressumContent } from './components/ImpressumContent.js';
+import { createNavigation, initNavigation } from '../components/Navigation.js';
+import { createFooter } from '../components/Footer.js';
+import { createLegalHeader } from '../components/LegalHeader.js';
+import { createImpressumContent } from '../components/ImpressumContent.js';
 
 // Initialize impressum page
 function initImpressumPage() {
@@ -15,8 +15,13 @@ function initImpressumPage() {
                 ${createLegalHeader('Impressum')}
                 ${createImpressumContent()}
             </div>
+        </section>
+        ${createFooter()}
+    `;
+
+    // Initialize navigation functionality
+    initNavigation();
 }
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', initImpressumPage);
-}
