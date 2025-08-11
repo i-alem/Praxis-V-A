@@ -1,8 +1,8 @@
 # Praxis-V-A
 
-## Bildordner
+## Bilder
 
-Der `src/img` Ordner enthält alle lokalen Bilder der Website:
+Der `public` Ordner enthält alle lokalen Bilder der Website:
 
 ### Logos
 - `logo.svg` - Hauptlogo (blau mit weißen Details) für Navigation
