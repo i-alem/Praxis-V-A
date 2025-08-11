@@ -12,7 +12,7 @@ export class Hero {
                         </div>
                     </div>
                     <div class="hero-image">
-                        <img src="img/hero-physiotherapy.jpg" alt="Physiotherapie Behandlung" loading="lazy">
+                        <img src="src/img/hero-physiotherapy.jpg" alt="Physiotherapie Behandlung" loading="lazy">
                     </div>
                 </div>
             </section>

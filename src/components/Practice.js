@@ -9,19 +9,19 @@ export class Practice {
 
         this.galleryImages = [
             {
-                src: "img/practice-room-1.jpg",
+                src: "src/img/practice-room-1.jpg",
                 alt: "Behandlungsraum"
             },
             {
-                src: "img/practice-room-2.jpg",
+                src: "src/img/practice-room-2.jpg",
                 alt: "Therapiegeräte"
             },
             {
-                src: "img/practice-room-3.jpg",
+                src: "src/img/practice-room-3.jpg",
                 alt: "Empfangsbereich"
             },
             {
-                src: "img/practice-room-4.jpg",
+                src: "src/img/practice-room-4.jpg",
                 alt: "Trainingsbereich"
             }
         ];
