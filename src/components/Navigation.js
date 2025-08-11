@@ -2,19 +2,24 @@ export function createNavigation() {
     return `
         <nav class="navbar">
             <div class="nav-container">
-                <a href="#" class="nav-logo" id="nav-logo">
-                    <img src="src/img/logo-light.svg" alt="Logo" onerror="this.style.display='none'">
+                <a href="/" class="nav-logo">
+                    <svg width="40" height="40" viewBox="0 0 100 100" fill="none">
+                        <circle cx="50" cy="50" r="45" fill="#3f5068"/>
+                        <path d="M30 40h40v20H30z" fill="white"/>
+                        <circle cx="40" cy="50" r="5" fill="#3f5068"/>
+                        <circle cx="60" cy="50" r="5" fill="#3f5068"/>
+                    </svg>
                     <span>Praxis Vital & Active</span>
                 </a>
                 <div class="nav-menu" id="nav-menu">
-                    <a href="#services" class="nav-link" data-section="services">Leistungen</a>
-                    <a href="#practice" class="nav-link" data-section="practice">Praxis</a>
+                    <a href="#services" class="nav-link">Leistungen</a>
+                    <a href="#practice" class="nav-link">Praxis</a>
                     <a href="https://medifox.de/termine" target="_blank" class="nav-link cta-link">Termin buchen</a>
                 </div>
                 <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
                 </div>
             </div>
         </nav>
@@ -23,9 +28,9 @@ export function createNavigation() {
 
 export function initNavigation() {
     // Logo click handler
-    const navLogoLink = document.getElementById('nav-logo');
-    if (navLogoLink) {
-        navLogoLink.addEventListener('click', (e) => {
+    const navLogo = document.querySelector('.nav-logo');
+    if (navLogo) {
+        navLogo.addEventListener('click', (e) => {
             e.preventDefault();
             if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -36,14 +41,13 @@ export function initNavigation() {
     }
 
     // Section link handlers
-    document.querySelectorAll('.nav-link[data-section]').forEach(link => {
+    document.querySelectorAll('.nav-link[href^="#"]').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            const section = link.getAttribute('data-section');
+            const href = link.getAttribute('href');
+            const section = href.substring(1);
             
-            // Check if we're on the main page
             if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
-                // Scroll to section on main page
                 const target = document.getElementById(section);
                 if (target) {
                     window.scrollTo({
@@ -52,28 +56,25 @@ export function initNavigation() {
                     });
                 }
             } else {
-                // Navigate to main page with section hash
-                window.location.href = `/#${section}`;
+                window.location.href = `/${href}`;
             }
         });
     });
 
+    // Mobile menu
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
 
     if (hamburger && navMenu) {
-        hamburger.addEventListener('click', (e) => {
-            e.preventDefault();
+        hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
-            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
         });
 
         document.addEventListener('click', (e) => {
             if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
-                document.body.style.overflow = '';
             }
         });
 
@@ -81,7 +82,6 @@ export function initNavigation() {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
-                document.body.style.overflow = '';
             });
         });
     }
