@@ -5,7 +5,10 @@ export function Hero() {
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-text">
-                        <h1 class="hero-title">Willkommen bei <span class="highlight">Praxis Vital & Active</span></h1>
+                        <h1 class="hero-title">Willkommen bei 
+                        <img src="/src/img/logo-light.svg" alt="Praxis Vital & Active Logo" width="40" height="40">
+                        <span class="highlight">Praxis Vital & Active</span>
+                        </h1>
                         <p class="hero-subtitle">Ihre moderne Physiotherapiepraxis für ganzheitliche Behandlung und nachhaltige Rehabilitation</p>
                         <div class="hero-buttons">
                             <a href="https://medifox.de/termine" target="_blank" class="btn btn-primary">Termin vereinbaren</a>
