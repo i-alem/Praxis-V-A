@@ -4,7 +4,7 @@ export function Navigation() {
         <nav class="navbar">
             <div class="nav-container">
                 <a href="/" class="nav-logo">
-                    <img src="/src/img/logo-light.svg" alt="Praxis Vital & Active Logo" width="40" height="40">
+                    <img src="/img/logo-light.svg" alt="Praxis Vital & Active Logo" width="40" height="40">
                     <span>Vital & Active</span>
                     <span>Praxis für Physiotherapie</span>
                 </a>
