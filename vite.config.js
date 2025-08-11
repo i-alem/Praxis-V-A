@@ -8,8 +8,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: 'index.html',
-        impressum: 'src/pages/impressum.html',
-        datenschutz: 'src/pages/datenschutz.html'
+        impressum: 'impressum.html',
+        datenschutz: 'datenschutz.html'
       }
     }
   },
