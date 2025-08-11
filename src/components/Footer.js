@@ -60,7 +60,7 @@ export class Footer {
                     <div class="footer-main">
                         <div class="footer-section info">
                             <div class="footer-logo">
-                                <img src="src/images/logo-dark.svg" alt="Praxis Vital & Active Logo" class="butterfly-logo">
+                                <img src="/src/images/logo-dark.svg" alt="Praxis Vital & Active Logo" class="butterfly-logo">
                                 <span>Praxis Vital & Active</span>
                             </div>
                             <p class="footer-description">Ihre moderne Physiotherapiepraxis für ganzheitliche Behandlung und nachhaltige Rehabilitation.</p>

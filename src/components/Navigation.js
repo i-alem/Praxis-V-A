@@ -82,7 +82,7 @@ export class Navigation {
                 <div class="nav-container">
                     <div class="nav-logo">
                         <a href="/" class="logo-link">
-                            <img src="src/images/logo-light.svg" alt="Praxis Vital & Active Logo" class="butterfly-logo">
+                            <img src="/src/images/logo-light.svg" alt="Praxis Vital & Active Logo" class="butterfly-logo">
                             <span class="logo-text">Praxis Vital & Active</span>
                         </a>
                     </div>
