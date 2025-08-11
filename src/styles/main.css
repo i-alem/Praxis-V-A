@@ -802,9 +802,3 @@ p {
 }
 
 /* Focus */
-.btn:focus,
-.nav-link:focus,
-a:focus {
-    outline: 2px solid #2563eb;
-    outline-offset: 2px;
-}
