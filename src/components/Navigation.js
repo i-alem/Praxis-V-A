@@ -3,7 +3,7 @@ export function createNavigation() {
         <nav class="navbar">
             <div class="nav-container">
                 <a href="#" class="nav-logo" id="nav-logo">
-                    <img src="src/img/logo-light.svg" alt="Logo">
+                    <img src="/src/img/logo-light.svg" alt="Logo">
                     <span>Praxis Vital & Active</span>
                 </a>
                 <div class="nav-menu" id="nav-menu">
