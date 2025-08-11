@@ -5,6 +5,8 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
+    copyPublicDir: false,
+    assetsInlineLimit: 0,
     rollupOptions: {
       input: {
         main: 'index.html',
@@ -13,6 +15,7 @@ export default defineConfig({
       }
     }
   },
+  assetsInclude: ['**/*.svg'],
   server: {
     port: 3000,
     open: true
