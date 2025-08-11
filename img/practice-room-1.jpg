@@ -1,8 +1,0 @@
-<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg">
-  <rect width="400" height="200" fill="#f8fafc"/>
-  <rect x="20" y="20" width="360" height="160" fill="#e2e8f0" rx="8"/>
-  <rect x="50" y="50" width="100" height="60" fill="#2563eb" opacity="0.3" rx="5"/>
-  <rect x="170" y="50" width="80" height="60" fill="#10b981" opacity="0.3" rx="5"/>
-  <rect x="270" y="50" width="80" height="60" fill="#f59e0b" opacity="0.3" rx="5"/>
-  <text x="200" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1f2937">Behandlungsraum</text>
-</svg>

@@ -1,8 +1,0 @@
-<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
-  <rect width="800" height="500" fill="#f8fafc"/>
-  <rect x="50" y="50" width="700" height="400" fill="#e2e8f0" rx="10"/>
-  <circle cx="400" cy="200" r="60" fill="#2563eb" opacity="0.3"/>
-  <rect x="300" y="280" width="200" height="80" fill="#2563eb" opacity="0.2" rx="5"/>
-  <text x="400" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#1f2937">Physiotherapie</text>
-  <text x="400" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#6b7280">Hero Bild Platzhalter</text>
-</svg>
