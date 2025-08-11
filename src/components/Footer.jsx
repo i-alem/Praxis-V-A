@@ -6,7 +6,7 @@ export function Footer() {
                 <div class="footer-main">
                     <div class="footer-section info">
                         <div class="footer-logo">
-                            <img src="/src/img/logo-dark.svg" alt="Praxis Vital & Active Logo" width="40" height="40">
+                            <img src="/img/logo-dark.svg" alt="Praxis Vital & Active Logo" width="40" height="40">
                             <span>Praxis Vital & Active</span>
                         </div>
                         <p class="footer-description">Ihre moderne Physiotherapiepraxis für ganzheitliche Behandlung und nachhaltige Rehabilitation.</p>
