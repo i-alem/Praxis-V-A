@@ -1,9 +1,13 @@
 export function createNavigation() {
+    // Determine correct logo path based on current location
+    const isSubpage = window.location.pathname.includes('/pages/');
+    const logoPath = isSubpage ? '../../src/img/logo-light.svg' : '/src/img/logo-light.svg';
+    
     return `
         <nav class="navbar">
             <div class="nav-container">
                 <a href="#" class="nav-logo" id="nav-logo">
-                    <img src="src/img/logo-light.svg" alt="Logo">
+                    <img src="${logoPath}" alt="Logo">
                     <span>Praxis Vital & Active</span>
                 </a>
                 <div class="nav-menu" id="nav-menu">
@@ -23,14 +27,14 @@ export function createNavigation() {
 
 export function initNavigation() {
     // Logo click handler
-    const navLogo = document.getElementById('nav-logo');
-    if (navLogo) {
-        navLogo.addEventListener('click', (e) => {
+    const navLogoLink = document.getElementById('nav-logo');
+    if (navLogoLink) {
+        navLogoLink.addEventListener('click', (e) => {
             e.preventDefault();
             if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             } else {
-                window.location.href = '/';
+                window.location.href = '../../';
             }
         });
     }

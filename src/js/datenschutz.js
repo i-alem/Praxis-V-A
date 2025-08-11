@@ -21,19 +21,6 @@ function initDatenschutzPage() {
 
     // Initialize navigation functionality
     initNavigation();
-    
-    // Fix logo paths for legal pages (adjust for subdirectory)
-    setTimeout(() => {
-        const navLogo = document.querySelector('.nav-logo img');
-        if (navLogo) {
-            navLogo.src = '../../src/img/logo-light.svg';
-        }
-        
-        const footerLogo = document.querySelector('.footer-logo img');
-        if (footerLogo) {
-            footerLogo.src = '../../src/img/logo-dark.svg';
-        }
-    }, 100);
 }
 
 // Initialize when DOM is loaded

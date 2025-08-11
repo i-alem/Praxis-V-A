@@ -1,11 +1,15 @@
 export function createFooter() {
+    // Determine correct logo path based on current location
+    const isSubpage = window.location.pathname.includes('/pages/');
+    const logoPath = isSubpage ? '../../src/img/logo-dark.svg' : '/src/img/logo-dark.svg';
+    
     return `
         <footer class="footer">
             <div class="container">
                 <div class="footer-main">
                     <div class="footer-section info">
                         <div class="footer-logo">
-                            <img src="src/img/logo-dark.svg" alt="Logo">
+                            <img src="${logoPath}" alt="Logo">
                             <span>Praxis Vital & Active</span>
                         </div>
                         <p class="footer-description">Ihre moderne Physiotherapiepraxis für ganzheitliche Behandlung und nachhaltige Rehabilitation.</p>
