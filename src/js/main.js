@@ -68,4 +68,19 @@ function initScrollAnimations() {
 }
 
 // Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', initPage);
+document.addEventListener('DOMContentLoaded', () => {
+    initPage();
+    
+    // Handle hash navigation on page load
+    if (window.location.hash) {
+        setTimeout(() => {
+            const target = document.querySelector(window.location.hash);
+            if (target) {
+                window.scrollTo({
+                    top: target.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+            }
+        }, 100);
+    }
+});

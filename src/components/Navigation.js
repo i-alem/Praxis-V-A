@@ -3,12 +3,12 @@ export function createNavigation() {
         <nav class="navbar">
             <div class="nav-container">
                 <a href="#" class="nav-logo" id="nav-logo">
-                    <img src="/src/img/logo-light.svg" alt="Logo">
+                    <img src="src/img/logo-light.svg" alt="Logo">
                     <span>Praxis Vital & Active</span>
                 </a>
                 <div class="nav-menu" id="nav-menu">
-                    <a href="#services" class="nav-link">Leistungen</a>
-                    <a href="#practice" class="nav-link">Praxis</a>
+                    <a href="#services" class="nav-link" data-section="services">Leistungen</a>
+                    <a href="#practice" class="nav-link" data-section="practice">Praxis</a>
                     <a href="https://medifox.de/termine" target="_blank" class="nav-link cta-link">Termin buchen</a>
                 </div>
                 <div class="hamburger" id="hamburger">
@@ -34,6 +34,29 @@ export function initNavigation() {
             }
         });
     }
+
+    // Section link handlers
+    document.querySelectorAll('.nav-link[data-section]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const section = link.getAttribute('data-section');
+            
+            // Check if we're on the main page
+            if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+                // Scroll to section on main page
+                const target = document.getElementById(section);
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            } else {
+                // Navigate to main page with section hash
+                window.location.href = `/#${section}`;
+            }
+        });
+    });
 
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
