@@ -20,7 +20,6 @@ function initDatenschutzPage() {
     `;
 
     // Initialize navigation functionality
-    initNavigation();
 }
 
 // Initialize when DOM is loaded
