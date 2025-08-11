@@ -94,8 +94,8 @@ p {
 }
 
 .butterfly-logo {
-    width: 32px;
-    height: 32px;
+    width: 48px;
+    height: 48px;
 }
 
 .nav-menu {
@@ -531,6 +531,10 @@ p {
     color: white;
 }
 
+.footer-logo .butterfly-logo {
+    width: 40px;
+    height: 40px;
+}
 .footer-description {
     color: #d1d5db;
     line-height: 1.6;
@@ -940,6 +944,16 @@ p {
 @media (max-width: 480px) {
     .container {
         padding: 0 0.75rem;
+    }
+
+    .butterfly-logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .footer-logo .butterfly-logo {
+        width: 36px;
+        height: 36px;
     }
 
     .hero {
