@@ -21,6 +21,17 @@ function initImpressumPage() {
 
     // Initialize navigation functionality
     initNavigation();
+    
+    // Fix logo path for legal pages
+    const navLogo = document.querySelector('.nav-logo img');
+    if (navLogo) {
+        navLogo.src = '../img/logo-light.svg';
+    }
+    
+    const footerLogo = document.querySelector('.footer-logo img');
+    if (footerLogo) {
+        footerLogo.src = '../img/logo-dark.svg';
+    }
 }
 
 // Initialize when DOM is loaded

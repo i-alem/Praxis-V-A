@@ -121,7 +121,7 @@ p {
 }
 
 .nav-link:hover {
-    color: #2563eb;
+    color: rgb(63, 80, 104);
 }
 
 .nav-link::after {
@@ -131,7 +131,7 @@ p {
     height: 2px;
     bottom: -5px;
     left: 0;
-    background-color: #2563eb;
+    background-color: rgb(63, 80, 104);
     transition: width 0.3s ease;
 }
 
@@ -140,7 +140,7 @@ p {
 }
 
 .cta-link {
-    background: #2563eb;
+    background: rgb(63, 80, 104);
     color: white !important;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
@@ -148,7 +148,7 @@ p {
 }
 
 .cta-link:hover {
-    background: #1d4ed8;
+    background: rgb(43, 60, 84);
     transform: translateY(-1px);
 }
 
@@ -195,7 +195,7 @@ p {
 }
 
 .highlight {
-    color: #2563eb;
+    color: rgb(63, 80, 104);
 }
 
 .hero-subtitle {
@@ -223,24 +223,24 @@ p {
 }
 
 .btn-primary {
-    background: #2563eb;
+    background: rgb(63, 80, 104);
     color: white;
 }
 
 .btn-primary:hover {
-    background: #1d4ed8;
+    background: rgb(43, 60, 84);
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 10px 25px rgba(63, 80, 104, 0.3);
 }
 
 .btn-secondary {
     background: transparent;
-    color: #2563eb;
-    border-color: #2563eb;
+    color: rgb(63, 80, 104);
+    border-color: rgb(63, 80, 104);
 }
 
 .btn-secondary:hover {
-    background: #2563eb;
+    background: rgb(63, 80, 104);
     color: white;
     transform: translateY(-2px);
 }
@@ -297,13 +297,13 @@ p {
 .service-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    border-color: #2563eb;
+    border-color: rgb(152, 187, 206);
 }
 
 .service-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    background: linear-gradient(135deg, rgb(152, 187, 206), rgb(172, 207, 226));
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -554,7 +554,7 @@ p {
 .legal-contact-info .contact-item svg {
     width: 16px;
     height: 16px;
-    color: #2563eb;
+    color: rgb(152, 187, 206);
 }
 
 .legal-contact-info .contact-text span,
@@ -567,7 +567,7 @@ p {
 }
 
 .legal-contact-info .contact-text a:hover {
-    color: #2563eb;
+    color: rgb(152, 187, 206);
 }
 
 .legal-section {
@@ -614,14 +614,14 @@ p {
 }
 
 .legal-info a {
-    color: #2563eb;
+    color: rgb(152, 187, 206);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .legal-info a:hover {
-    color: #1d4ed8;
+    color: rgb(132, 167, 186);
 }
 
 .legal-back {
