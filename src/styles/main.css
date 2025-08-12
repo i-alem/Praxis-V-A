@@ -173,7 +173,7 @@ p {
 
 /* Hero */
 .hero {
-    padding: 120px 0 80px;
+    padding: 220px 0 40px;
     background: #f8fafc;
     min-height: 100vh;
     display: flex;
@@ -188,7 +188,7 @@ p {
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-weight: 700;
     color: #1f2937;
     margin-bottom: 1.5rem;
@@ -199,10 +199,11 @@ p {
 
 .highlight {
     color: #3f5068;
+    white-space: nowrap;
 }
 
 .hero-subtitle {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     color: #6b7280;
     margin-bottom: 2rem;
     line-height: 1.6;
@@ -298,7 +299,7 @@ p {
 
 /* Services */
 .services {
-    padding: 80px 0;
+    padding: 80px 0 120px;
     background: #f8fafc;
 }
 
@@ -353,7 +354,7 @@ p {
 
 /* Practice */
 .practice {
-    padding: 80px 0;
+    padding: 80px 0 160px;
     background: #f8fafc;
 }
 
@@ -413,6 +414,71 @@ p {
 
 .gallery-grid img:hover {
     transform: scale(1.05);
+}
+
+/* Reviews */
+.reviews {
+    padding: 40px 0 60px;
+    background: white;
+    overflow: hidden;
+}
+
+.reviews-ticker {
+    overflow: hidden;
+    position: relative;
+}
+
+.reviews-track {
+    display: flex;
+    gap: 2rem;
+    animation: scroll-reviews 120s linear infinite;
+    width: fit-content;
+}
+
+@keyframes scroll-reviews {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50% - 1rem));
+    }
+}
+
+.review-card {
+    background: white;
+    border: 1px solid #f3f4f6;
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    min-width: 300px;
+    max-width: 300px;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.review-stars {
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+    color: #fbbf24;
+    margin-bottom: 1rem;
+}
+
+.review-stars svg {
+    width: 18px;
+    height: 18px;
+}
+
+.review-comment {
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.review-name {
+    color: #374151;
+    font-size: 0.875rem;
+    font-weight: 500;
 }
 
 /* Footer */
@@ -692,14 +758,47 @@ p {
         transform: translateY(-7px) rotate(-45deg);
     }
 
+    /* Fix mobile overflow */
+    body {
+        overflow-x: hidden;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 0 1rem;
+        overflow-x: hidden;
+    }
+    .hero {
+        padding: 140px 0 40px;
+        min-height: auto;
+        overflow-x: hidden;
+    }
+
     .hero-content {
         grid-template-columns: 1fr;
         gap: 2rem;
         text-align: center;
+        width: 100%;
+        max-width: 100%;
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        word-wrap: break-word;
+        hyphens: auto;
+        line-height: 1.2;
+    }
+    
+    .highlight {
+        display: inline-block;
+        white-space: nowrap;
+    }
+
+    .hero-subtitle {
+        font-size: 1.125rem;
+        margin-bottom: 1.5rem;
+        word-wrap: break-word;
     }
 
     .hero-image {
@@ -708,6 +807,38 @@ p {
 
     .hero-image img {
         height: 300px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero-reviews {
+        margin-top: 3.5rem;
+        overflow-x: hidden;
+    }
+
+    .hero-reviews .review-card {
+        min-width: calc(100vw - 4rem);
+        max-width: calc(100vw - 4rem);
+        height: 120px;
+        padding: 1rem;
+    }
+
+    .hero-reviews .review-comment {
+        font-size: 0.9rem;
+        -webkit-line-clamp: 2;
+        min-height: 2.2em;
+    }
+
+    .hero-reviews .review-footer {
+        font-size: 0.8rem;
+    }
+
+    .hero-reviews .review-name {
+        font-size: 0.8rem;
+    }
+
+    .hero-reviews .review-date {
+        font-size: 0.75rem;
     }
 
     .services-grid {
@@ -718,6 +849,11 @@ p {
         grid-template-columns: 1fr;
         gap: 2rem;
         text-align: center;
+    }
+
+    .review-card {
+        min-width: 300px;
+        max-width: 300px;
     }
 
     .footer-main {
@@ -771,8 +907,16 @@ p {
 }
 
 @media (max-width: 480px) {
+    /* Prevent horizontal scroll */
+    html, body {
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+
     .container {
         padding: 0 0.75rem;
+        max-width: 100%;
+        overflow-x: hidden;
     }
 
     .nav-logo img,
@@ -782,19 +926,76 @@ p {
     }
 
     .hero {
-        padding: 100px 0 60px;
+        padding: 160px 0 60px;
+        overflow-x: hidden;
     }
 
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.75rem;
+        line-height: 1.1;
+        word-wrap: break-word;
+        hyphens: auto;
     }
 
     .hero-subtitle {
-        font-size: 1rem;
+        font-size: 1.125rem;
+        margin-bottom: 1.5rem;
+        word-wrap: break-word;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: center;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 280px;
+        min-width: auto;
+        padding: 0.875rem 1.5rem;
+        box-sizing: border-box;
+    }
+
+    .hero-reviews {
+        margin-top: 2.5rem;
+        overflow-x: hidden;
+    }
+
+    .hero-reviews .review-card {
+        min-width: calc(100vw - 3rem);
+        max-width: calc(100vw - 3rem);
+        height: 110px;
+        padding: 0.875rem;
+        box-sizing: border-box;
+    }
+
+    .hero-reviews .review-stars svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .hero-reviews .review-comment {
+        font-size: 0.85rem;
+        line-height: 1.4;
+        min-height: 2em;
+    }
+
+    .hero-reviews .review-footer {
+        font-size: 0.75rem;
+    }
+
+    .hero-reviews .review-name {
+        font-size: 0.75rem;
+    }
+
+    .hero-reviews .review-date {
+        font-size: 0.7rem;
     }
 
     .services, .practice {
-        padding: 60px 0;
+        padding: 60px 0 80px;
     }
 
     .section-header {
@@ -805,12 +1006,27 @@ p {
         padding: 1.5rem;
     }
 
+    .practice-features {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
     .gallery-grid {
         grid-template-columns: 1fr;
     }
 
     .gallery-grid img {
         height: 250px;
+    }
+
+    .review-card {
+        min-width: 280px;
+        max-width: 280px;
+        padding: 1rem;
+    }
+
+    .reviews {
+        padding: 40px 0;
     }
 
     .footer {
@@ -846,6 +1062,110 @@ p {
 .hero-image.animate {
     transform: translateX(0);
 }
+
+/* Hero Reviews */
+.hero-reviews {
+    margin-top: 5rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out 0.8s, transform 0.8s ease-out 0.8s;
+}
+
+.hero-reviews.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-reviews .reviews-ticker {
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-reviews .reviews-track {
+    display: flex;
+    gap: 2rem;
+    animation: scroll-reviews 60s linear infinite;
+    width: fit-content;
+}
+
+.hero-reviews .review-card {
+    background: white;
+    border: 1px solid #f3f4f6;
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    min-width: 360px;
+    max-width: 360px;
+    flex-shrink: 0;
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    height: 130px;
+}
+
+.hero-reviews .review-stars {
+    display: flex;
+    justify-content: flex-start;
+    gap: 3px;
+    color: #fbbf24;
+    margin-bottom: 0rem;
+}
+
+.hero-reviews .review-stars svg {
+    width: 18px;
+    height: 18px;
+}
+
+.hero-reviews .review-content {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0rem;
+}
+
+.hero-reviews .review-comment {
+    color: #1f2937;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 0.95rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 2.4em;
+}
+
+.hero-reviews .review-more {
+    color: #3f5068;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 0.25rem;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.hero-reviews .review-more:hover {
+    color: #2b3c54;
+}
+
+.hero-reviews .review-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+    margin-top: auto;
+}
+
+.hero-reviews .review-name {
+    color: #1f2937;
+    font-weight: 500;
+}
+
+.hero-reviews .review-date {
+    color: #6b7280;
+    font-size: 0.8rem;
+}
+
 
 /* Section animations - initial hidden state */
 .section-title,

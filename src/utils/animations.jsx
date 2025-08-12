@@ -21,7 +21,7 @@ export function initScrollAnimations() {
             if (entry.isIntersecting) {
                 // Hero-Sektion
                 if (entry.target.classList.contains('hero')) {
-                    const heroElements = entry.target.querySelectorAll('.hero-title, .hero-subtitle, .hero-buttons, .hero-image');
+                    const heroElements = entry.target.querySelectorAll('.hero-title, .hero-subtitle, .hero-buttons, .hero-image, .hero-reviews');
                     heroElements.forEach(el => el.classList.add('animate'));
                 }
                 
@@ -91,6 +91,11 @@ export function initScrollAnimations() {
                         }
                     }, 1200);
                 }
+                
+                // Reviews-Sektion
+                if (entry.target.classList.contains('reviews')) {
+                    // Reviews haben keine Titel mehr - Animation entfernt
+                }
             }
         });
     }, {
@@ -117,10 +122,12 @@ export function initScrollAnimations() {
     const heroSection = document.querySelector('.hero');
     const servicesSection = document.querySelector('.services');
     const practiceSection = document.querySelector('.practice');
+    const reviewsSection = document.querySelector('.reviews');
 
     if (heroSection) animationObserver.observe(heroSection);
     if (servicesSection) animationObserver.observe(servicesSection);
     if (practiceSection) animationObserver.observe(practiceSection);
+    if (reviewsSection) animationObserver.observe(reviewsSection);
 
     // Beobachte Service Cards und Gallery Images
     const animatedElements = document.querySelectorAll('.service-card, .gallery-grid img');
