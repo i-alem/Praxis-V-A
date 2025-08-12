@@ -174,7 +174,7 @@ p {
 /* Hero */
 .hero {
     padding: 120px 0 80px;
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    background: #f8fafc;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -192,6 +192,9 @@ p {
     font-weight: 700;
     color: #1f2937;
     margin-bottom: 1.5rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .highlight {
@@ -203,12 +206,18 @@ p {
     color: #6b7280;
     margin-bottom: 2rem;
     line-height: 1.6;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s;
 }
 
 .hero-buttons {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out 0.4s, transform 0.8s ease-out 0.4s;
 }
 
 .btn {
@@ -270,12 +279,27 @@ p {
     color: #6b7280;
     max-width: 600px;
     margin: 0 auto;
+
+
+}
+
+.section-title-old {
+    font-size: 2.5rem;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle-old {
+    font-size: 1.125rem;
+    color: #6b7280;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 /* Services */
 .services {
     padding: 80px 0;
-    background: white;
+    background: #f8fafc;
 }
 
 .services-grid {
@@ -356,6 +380,7 @@ p {
     display: grid;
     gap: 1rem;
 }
+
 
 .feature {
     display: flex;
@@ -802,3 +827,43 @@ p {
 }
 
 /* Focus */
+
+/* Hero Text Animations */
+.hero-image {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s ease-out 0.6s, transform 0.8s ease-out 0.6s;
+}
+
+.hero-title.animate,
+.hero-subtitle.animate,
+.hero-buttons.animate,
+.hero-image.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-image.animate {
+    transform: translateX(0);
+}
+
+/* Section animations - initial hidden state */
+.section-title,
+.section-subtitle,
+.practice-text h3,
+.practice-text p,
+.practice-features {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Animated state */
+.section-title.animate,
+.section-subtitle.animate,
+.practice-text h3.animate,
+.practice-text p.animate,
+.practice-features.animate {
+    opacity: 1;
+    transform: translateY(0);
+}

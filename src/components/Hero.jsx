@@ -5,8 +5,7 @@ export function Hero() {
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-text">
-                        <h1 class="hero-title">Willkommen bei 
-                        <img src="/logo-light.svg" alt="Praxis Vital & Active Logo" width="40" height="40">
+                        <h1 class="hero-title">Willkommen bei der 
                         <span class="highlight">Praxis Vital & Active</span>
                         </h1>
                         <p class="hero-subtitle">Ihre moderne Physiotherapiepraxis für ganzheitliche Behandlung und nachhaltige Rehabilitation</p>
@@ -16,7 +15,7 @@ export function Hero() {
                         </div>
                     </div>
                     <div class="hero-image">
-                        <img src="https://images.pexels.com/photos/6111597/pexels-photo-6111597.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Physiotherapie Behandlung" loading="lazy">
+                        <!-- Rechte Spalte bleibt für zukünftigen Inhalt reserviert -->
                     </div>
                 </div>
             </div>

@@ -48,7 +48,7 @@ export function Practice() {
                 </div>
                 <div class="practice-content">
                     <div class="practice-text">
-                        <h3>Herzlich willkommen in der Praxis Vital & Active</h3>
+                        <h3>Herzlich willkommen in der <br> Praxis Vital & Active</h3>
                         <p>In unserer modernen Physiotherapiepraxis erwartet Sie eine professionelle und persönliche Betreuung. Unser erfahrenes Team aus qualifizierten Physiotherapeuten steht Ihnen mit individuellen Behandlungskonzepten zur Seite.</p>
                         <div class="practice-features">
                             ${featureList}
