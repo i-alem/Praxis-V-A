@@ -723,6 +723,11 @@ p {
 
 /* Mobile */
 @media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+
     .hamburger {
         display: flex;
     }
@@ -758,20 +763,9 @@ p {
         transform: translateY(-7px) rotate(-45deg);
     }
 
-    /* Fix mobile overflow */
-    body {
-        overflow-x: hidden;
-    }
-
-    .container {
-        max-width: 100%;
-        padding: 0 1rem;
-        overflow-x: hidden;
-    }
     .hero {
         padding: 140px 0 40px;
         min-height: auto;
-        overflow-x: hidden;
     }
 
     .hero-content {
@@ -813,14 +807,24 @@ p {
 
     .hero-reviews {
         margin-top: 3.5rem;
-        overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
+    }
+
+    .hero-reviews .reviews-ticker {
+        width: 100%;
+    }
+
+    .hero-reviews .reviews-track {
+        width: fit-content;
     }
 
     .hero-reviews .review-card {
-        min-width: calc(100vw - 4rem);
-        max-width: calc(100vw - 4rem);
+        min-width: calc(100vw - 3rem);
+        max-width: calc(100vw - 3rem);
         height: 120px;
         padding: 1rem;
+        box-sizing: border-box;
     }
 
     .hero-reviews .review-comment {
@@ -854,6 +858,7 @@ p {
     .review-card {
         min-width: 300px;
         max-width: 300px;
+        box-sizing: border-box;
     }
 
     .footer-main {
@@ -907,16 +912,8 @@ p {
 }
 
 @media (max-width: 480px) {
-    /* Prevent horizontal scroll */
-    html, body {
-        overflow-x: hidden;
-        max-width: 100vw;
-    }
-
     .container {
         padding: 0 0.75rem;
-        max-width: 100%;
-        overflow-x: hidden;
     }
 
     .nav-logo img,
@@ -927,7 +924,6 @@ p {
 
     .hero {
         padding: 100px 0 60px;
-        overflow-x: hidden;
     }
 
     .hero-title {
@@ -960,12 +956,13 @@ p {
 
     .hero-reviews {
         margin-top: 2.5rem;
-        overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
     }
 
     .hero-reviews .review-card {
-        min-width: calc(100vw - 3rem);
-        max-width: calc(100vw - 3rem);
+        min-width: calc(100vw - 2rem);
+        max-width: calc(100vw - 2rem);
         height: 110px;
         padding: 0.875rem;
         box-sizing: border-box;
@@ -1023,6 +1020,7 @@ p {
         min-width: 280px;
         max-width: 280px;
         padding: 1rem;
+        box-sizing: border-box;
     }
 
     .reviews {
