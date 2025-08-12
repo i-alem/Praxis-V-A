@@ -5,8 +5,7 @@ export function Navigation() {
             <div class="nav-container">
                 <a href="/" class="nav-logo">
                     <img src="/logo-light.svg" alt="Praxis Vital & Active Logo" width="40" height="40">
-                    <span>Vital & Active</span>
-                    <span>Praxis für Physiotherapie</span>
+                    <span>Praxis Vital & Active</span>
                 </a>
                 <div class="nav-menu" id="nav-menu">
                     <a href="#services" class="nav-link">Leistungen</a>
