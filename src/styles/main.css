@@ -580,6 +580,34 @@ p {
     align-items: center;
     padding-top: 2rem;
     border-top: 1px solid #374151;
+    gap: 2rem;
+}
+
+.footer-creator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #9ca3af;
+    font-size: 0.875rem;
+}
+
+.creator-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #d1d5db;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.creator-link:hover {
+    color: white;
+}
+
+.creator-link svg {
+    width: 16px;
+    height: 16px;
 }
 
 .footer-legal {
@@ -872,7 +900,12 @@ p {
         text-align: center;
     }
 
+    .footer-creator {
+        order: 1;
+    }
+
     .footer-legal {
+        order: 2;
         justify-content: center;
     }
 
