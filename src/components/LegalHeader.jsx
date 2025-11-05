@@ -11,7 +11,7 @@ export function LegalHeader(title, subtitle = "Stand: Januar 2024") {
                         <circle cx="12" cy="10" r="3"/>
                     </svg>
                     <div class="contact-text">
-                        <span>Kaiserdamm 9</span>
+                        <span>Kaiserdamm</span>
                         <span>14059 Berlin</span>
                     </div>
                 </div>
