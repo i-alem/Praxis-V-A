@@ -22,6 +22,7 @@ export function Butterfly() {
 
 export function initButterfly() {
     let lastScroll = 0;
+    let scrollSpeed = 0;
     
     window.addEventListener('scroll', () => {
         const butterfly = document.querySelector('.butterfly-container');
@@ -29,22 +30,27 @@ export function initButterfly() {
         
         const scrolled = window.pageYOffset;
         const scrollDirection = scrolled > lastScroll ? 1 : -1;
+        scrollSpeed = Math.abs(scrolled - lastScroll);
         const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
         
         // Boundaries: navbar height and footer start
-        const navbarHeight = 70;
-        const footerHeight = 400;
+        const navbarHeight = 100;
+        const footerHeight = 500;
         const maxVertical = maxScroll - footerHeight;
         
-        // Horizontal movement based on scroll
-        const horizontalMove = Math.sin(scrolled * 0.005) * 50;
+        // Horizontal movement - more to the left
+        const horizontalMove = Math.sin(scrolled * 0.008) * 120 - 80;
         
         // Vertical follows scroll smoothly but stays within boundaries
-        let verticalMove = scrolled * 0.3;
-        verticalMove = Math.max(0, Math.min(verticalMove, maxVertical - navbarHeight));
+        let verticalMove = scrolled * 0.35;
+        verticalMove = Math.max(navbarHeight, Math.min(verticalMove, maxVertical));
         
-        // Gentle tilt based on direction
-        const tilt = scrollDirection * 3;
+        // Tilt based on direction and speed
+        const tilt = scrollDirection * Math.min(scrollSpeed * 0.5, 8);
+        
+        // Faster flapping when scrolling
+        const flapSpeed = 1.5 - Math.min(scrollSpeed * 0.05, 0.8);
+        butterfly.style.setProperty('--flap-speed', `${flapSpeed}s`);
         
         butterfly.style.transform = `translate(${horizontalMove}px, ${verticalMove}px) rotate(${tilt}deg)`;
         

@@ -1101,12 +1101,13 @@ p {
 .butterfly-container {
     position: fixed;
     top: 150px;
-    right: 12%;
+    right: 18%;
     width: 280px;
     height: 320px;
     pointer-events: none;
-    z-index: 1;
-    transition: transform 0.5s ease-out;
+    z-index: 0;
+    transition: transform 0.4s ease-out;
+    --flap-speed: 1.5s;
 }
 
 .butterfly {
@@ -1117,7 +1118,7 @@ p {
 
 .wing {
     transform-origin: 37.5px 42.5px;
-    animation: flap 2.8s ease-in-out infinite;
+    animation: flap var(--flap-speed) ease-in-out infinite;
 }
 
 .wing-left {
@@ -1125,7 +1126,7 @@ p {
 }
 
 .wing-right {
-    animation-delay: 0.2s;
+    animation-delay: 0.15s;
 }
 
 @keyframes flap {
@@ -1141,11 +1142,16 @@ p {
     opacity: 0.5;
 }
 
+.hero, .services, .practice, .reviews, .footer {
+    position: relative;
+    z-index: 1;
+}
+
 @media (max-width: 1024px) {
     .butterfly-container {
         width: 200px;
         height: 230px;
-        right: 8%;
+        right: 15%;
     }
 }
 
@@ -1153,7 +1159,7 @@ p {
     .butterfly-container {
         width: 140px;
         height: 160px;
-        right: 5%;
+        right: 10%;
         top: 120px;
     }
 }
@@ -1163,7 +1169,7 @@ p {
         width: 100px;
         height: 115px;
         opacity: 0.4;
-        right: 3%;
+        right: 8%;
         top: 100px;
     }
 }
