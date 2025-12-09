@@ -106,6 +106,18 @@ p {
     height: 48px;
 }
 
+.nav-logo .logo-dark {
+    display: none;
+}
+
+.dark-mode .nav-logo .logo-light {
+    display: none;
+}
+
+.dark-mode .nav-logo .logo-dark {
+    display: block;
+}
+
 .nav-menu {
     display: flex;
     align-items: center;
@@ -764,6 +776,14 @@ p {
         display: flex;
     }
 
+    .dark-mode-toggle.mobile-only {
+        display: flex;
+    }
+
+    .dark-mode-toggle.desktop-only {
+        display: none;
+    }
+
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -1081,9 +1101,9 @@ p {
 .butterfly-container {
     position: fixed;
     top: 150px;
-    right: 15%;
-    width: 180px;
-    height: 180px;
+    right: 12%;
+    width: 280px;
+    height: 320px;
     pointer-events: none;
     z-index: 1;
     transition: transform 0.5s ease-out;
@@ -1092,12 +1112,12 @@ p {
 .butterfly {
     width: 100%;
     height: 100%;
-    filter: drop-shadow(0 2px 6px rgba(152, 187, 206, 0.2));
+    filter: drop-shadow(0 2px 8px rgba(152, 187, 206, 0.25));
 }
 
 .wing {
-    transform-origin: 100px 90px;
-    animation: flap 2.5s ease-in-out infinite;
+    transform-origin: 37.5px 42.5px;
+    animation: flap 2.8s ease-in-out infinite;
 }
 
 .wing-left {
@@ -1105,7 +1125,7 @@ p {
 }
 
 .wing-right {
-    animation-delay: 0.15s;
+    animation-delay: 0.2s;
 }
 
 @keyframes flap {
@@ -1113,26 +1133,26 @@ p {
         transform: rotateX(0deg);
     }
     50% {
-        transform: rotateX(25deg);
+        transform: rotateX(20deg);
     }
 }
 
 .dark-mode .butterfly-container {
-    opacity: 0.6;
+    opacity: 0.5;
 }
 
 @media (max-width: 1024px) {
     .butterfly-container {
-        width: 140px;
-        height: 140px;
-        right: 10%;
+        width: 200px;
+        height: 230px;
+        right: 8%;
     }
 }
 
 @media (max-width: 768px) {
     .butterfly-container {
-        width: 100px;
-        height: 100px;
+        width: 140px;
+        height: 160px;
         right: 5%;
         top: 120px;
     }
@@ -1140,9 +1160,9 @@ p {
 
 @media (max-width: 480px) {
     .butterfly-container {
-        width: 70px;
-        height: 70px;
-        opacity: 0.5;
+        width: 100px;
+        height: 115px;
+        opacity: 0.4;
         right: 3%;
         top: 100px;
     }
@@ -1169,6 +1189,14 @@ p {
     position: relative;
     padding: 0;
     flex-shrink: 0;
+}
+
+.dark-mode-toggle.mobile-only {
+    display: none;
+}
+
+.dark-mode-toggle.desktop-only {
+    display: flex;
 }
 
 .dark-mode-toggle:hover {

@@ -4,11 +4,12 @@ export function Navigation() {
         <nav class="navbar">
             <div class="nav-container">
                 <a href="/" class="nav-logo">
-                    <img src="/logo-light.svg" alt="Praxis Vital & Active Logo" width="40" height="40">
+                    <img class="logo-light" src="/logo-light.svg" alt="Praxis Vital & Active Logo" width="40" height="40">
+                    <img class="logo-dark" src="/logo-dark.svg" alt="Praxis Vital & Active Logo" width="40" height="40">
                     <span>Praxis Vital & Active</span>
                 </a>
                 <div class="nav-right">
-                    <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Dark Mode umschalten">
+                    <button class="dark-mode-toggle mobile-only" id="dark-mode-toggle-mobile" aria-label="Dark Mode umschalten">
                         <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="12" cy="12" r="5"/>
                             <line x1="12" y1="1" x2="12" y2="3"/>
@@ -33,6 +34,22 @@ export function Navigation() {
                 <div class="nav-menu" id="nav-menu">
                     <a href="#services" class="nav-link">Leistungen</a>
                     <a href="#practice" class="nav-link">Praxis</a>
+                    <button class="dark-mode-toggle desktop-only" id="dark-mode-toggle-desktop" aria-label="Dark Mode umschalten">
+                        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"/>
+                            <line x1="12" y1="1" x2="12" y2="3"/>
+                            <line x1="12" y1="21" x2="12" y2="23"/>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                            <line x1="1" y1="12" x2="3" y2="12"/>
+                            <line x1="21" y1="12" x2="23" y2="12"/>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                        </svg>
+                        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                    </button>
                     <a href="https://medifox.de/termine" target="_blank" class="nav-link cta-link">Termin buchen</a>
                 </div>
             </div>
@@ -117,7 +134,8 @@ export function initNavigation() {
     window.addEventListener('scroll', updateNavbarScroll);
 
     // Dark mode toggle
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const darkModeToggleMobile = document.getElementById('dark-mode-toggle-mobile');
+    const darkModeToggleDesktop = document.getElementById('dark-mode-toggle-desktop');
     const savedMode = localStorage.getItem('darkMode');
     
     if (savedMode === 'enabled') {
@@ -125,12 +143,18 @@ export function initNavigation() {
         updateNavbarScroll();
     }
     
-    if (darkModeToggle) {
-        darkModeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            const isDark = document.body.classList.contains('dark-mode');
-            localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
-            updateNavbarScroll();
-        });
+    const toggleDarkMode = () => {
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+        localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+        updateNavbarScroll();
+    };
+    
+    if (darkModeToggleMobile) {
+        darkModeToggleMobile.addEventListener('click', toggleDarkMode);
+    }
+    
+    if (darkModeToggleDesktop) {
+        darkModeToggleDesktop.addEventListener('click', toggleDarkMode);
     }
 }
