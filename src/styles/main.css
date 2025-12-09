@@ -69,9 +69,10 @@ p {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid #e5e7eb;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid rgba(229, 231, 235, 0.5);
     z-index: 100;
     transition: all 0.3s ease;
 }
@@ -786,7 +787,7 @@ p {
     }
 
     .dark-mode-toggle.desktop-only {
-        display: none;
+        display: flex;
     }
 
     .nav-menu {
@@ -1153,10 +1154,6 @@ body {
     opacity: 0.5;
 }
 
-.dark-mode .butterfly path {
-    fill: #accfe2;
-}
-
 /* Content Blocks - Layer 2 */
 .hero, .services, .practice, .reviews, .footer {
     position: relative;
@@ -1230,11 +1227,11 @@ body {
 }
 
 .dark-mode-toggle.mobile-only {
-    display: none;
+    display: flex;
 }
 
 .dark-mode-toggle.desktop-only {
-    display: flex;
+    display: none;
 }
 
 .dark-mode-toggle:hover {
@@ -1278,8 +1275,10 @@ body {
 }
 
 .dark-mode .navbar {
-    background: rgba(31, 41, 55, 0.95);
-    border-bottom-color: #374151;
+    background: rgba(31, 41, 55, 0.7);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom-color: rgba(55, 65, 81, 0.5);
 }
 
 .dark-mode .nav-logo,
