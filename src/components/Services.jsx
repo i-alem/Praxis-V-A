@@ -2,32 +2,32 @@
 export function Services() {
     const services = [
         {
-            icon: '<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>',
+            icon: '<path d="M12 2c-1 0-2 .5-2 1.5V7c0 1 1 2 2 2s2-1 2-2V3.5c0-1-1-1.5-2-1.5z"/><path d="M8 10c-1.5 0-2.5 1-2.5 2.5v3c0 1.5 1 2.5 2.5 2.5m8 0c1.5 0 2.5-1 2.5-2.5v-3c0-1.5-1-2.5-2.5-2.5"/><path d="M12 9v4m-2 5l2 3 2-3"/>',
             title: "Krankengymnastik",
             description: "Individuelle Behandlung zur Wiederherstellung der Beweglichkeit und Schmerzlinderung"
         },
         {
-            icon: '<circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 6v6"/><path d="m21 12-6-3-6 3-6-3"/>',
+            icon: '<path d="M9 3h6v3H9z"/><path d="M12 6v3m-3 0h6"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><path d="M9 13.5c0 2 1.5 3.5 3 3.5s3-1.5 3-3.5m-6 4v4m6-4v4"/>',
             title: "Manuelle Therapie",
             description: "Gezielte Mobilisation von Gelenken und Behandlung von Funktionsstörungen"
         },
         {
-            icon: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+            icon: '<path d="M12 2c-2 0-3.5 1.5-3.5 3.5S10 9 12 9s3.5-1.5 3.5-3.5S14 2 12 2z"/><path d="M7 10c-1 0-2 1-2 2v3c0 1 1 2 2 2h10c1 0 2-1 2-2v-3c0-1-1-2-2-2"/><path d="M9 17v5m6-5v5"/><circle cx="10" cy="13" r="0.5"/><circle cx="14" cy="13" r="0.5"/>',
             title: "Massage",
             description: "Klassische und therapeutische Massagen zur Entspannung und Durchblutungsförderung"
         },
         {
-            icon: '<path d="M14 9V5a3 3 0 0 0-6 0v4"/><rect x="2" y="9" width="20" height="11" rx="2" ry="2"/>',
+            icon: '<path d="M12 2v4m0 4v4m0 4v4"/><path d="M8 6c-2 1-3 2-3 4s1 3 3 4m8-8c2 1 3 2 3 4s-1 3-3 4"/><path d="M10 10c-1 .5-1.5 1-1.5 2s.5 1.5 1.5 2m4-4c1 .5 1.5 1 1.5 2s-.5 1.5-1.5 2"/>',
             title: "Lymphdrainage",
             description: "Sanfte Entstauungstherapie zur Behandlung von Schwellungen und Ödemen"
         },
         {
-            icon: '<path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>',
+            icon: '<path d="M12 2v20"/><path d="M8 8l4 4 4-4M8 16l4-4 4 4"/><circle cx="12" cy="6" r="1"/><circle cx="12" cy="18" r="1"/>',
             title: "Elektrotherapie",
             description: "Moderne Behandlungsmethoden mit elektrischen Strömen zur Schmerztherapie"
         },
         {
-            icon: '<path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>',
+            icon: '<path d="M12 2C8 2 5 5 5 9c0 3 2 5 4 6v5c0 1 1 2 3 2s3-1 3-2v-5c2-1 4-3 4-6 0-4-3-7-7-7z"/><path d="M12 9v6"/><circle cx="12" cy="11" r="1.5"/>',
             title: "Wärmetherapie",
             description: "Fango, Heißluft und weitere Wärmeanwendungen zur Muskelentspannung"
         }

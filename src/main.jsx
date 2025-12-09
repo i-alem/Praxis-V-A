@@ -4,6 +4,7 @@ import { Hero } from './components/Hero.jsx';
 import { Services } from './components/Services.jsx';
 import { Practice } from './components/Practice.jsx';
 import { Footer } from './components/Footer.jsx';
+import { Butterfly, initButterfly } from './components/Butterfly.jsx';
 import { initSmoothScrolling, initScrollAnimations } from './utils/animations.jsx';
 
 // Initialize main page
@@ -13,6 +14,7 @@ function initMainPage() {
 
     app.innerHTML = `
         ${Navigation()}
+        ${Butterfly()}
         <main>
             ${Hero()}
             ${Services()}
@@ -25,6 +27,7 @@ function initMainPage() {
     initNavigation();
     initSmoothScrolling();
     initScrollAnimations();
+    initButterfly();
 }
 
 // Initialize when DOM is loaded
