@@ -756,6 +756,10 @@ p {
         padding: 0 1rem;
     }
 
+    .nav-right {
+        display: flex;
+    }
+
     .hamburger {
         display: flex;
     }
@@ -1145,6 +1149,12 @@ p {
 }
 
 /* Dark Mode Toggle */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 .dark-mode-toggle {
     background: transparent;
     border: 2px solid #e5e7eb;
@@ -1158,6 +1168,7 @@ p {
     transition: all 0.3s ease;
     position: relative;
     padding: 0;
+    flex-shrink: 0;
 }
 
 .dark-mode-toggle:hover {
@@ -1196,13 +1207,13 @@ p {
 
 /* Dark Mode Styles */
 .dark-mode {
-    background: #2b3c54;
+    background: #1f2937;
     color: #e5e7eb;
 }
 
 .dark-mode .navbar {
-    background: rgba(43, 60, 84, 0.95);
-    border-bottom-color: #4b5563;
+    background: rgba(31, 41, 55, 0.95);
+    border-bottom-color: #374151;
 }
 
 .dark-mode .nav-logo,
@@ -1236,7 +1247,7 @@ p {
 }
 
 .dark-mode .hero {
-    background: #2b3c54;
+    background: #1f2937;
 }
 
 .dark-mode .hero-title,
@@ -1275,11 +1286,11 @@ p {
 }
 
 .dark-mode .services {
-    background: #2b3c54;
+    background: #1f2937;
 }
 
 .dark-mode .service-card {
-    background: #3f5068;
+    background: #374151;
     border-color: #4b5563;
 }
 
@@ -1296,7 +1307,7 @@ p {
 }
 
 .dark-mode .practice {
-    background: #2b3c54;
+    background: #1f2937;
 }
 
 .dark-mode .practice-text h3 {
@@ -1312,11 +1323,11 @@ p {
 }
 
 .dark-mode .reviews {
-    background: #3f5068;
+    background: #374151;
 }
 
 .dark-mode .review-card {
-    background: #2b3c54;
+    background: #1f2937;
     border-color: #4b5563;
 }
 
@@ -1329,7 +1340,7 @@ p {
 }
 
 .dark-mode .hero-reviews .review-card {
-    background: #3f5068;
+    background: #374151;
     border-color: #4b5563;
 }
 
@@ -1353,17 +1364,21 @@ p {
     color: #84a7ba;
 }
 
+.dark-mode .footer {
+    background: #1a2332;
+}
+
 .dark-mode .legal-content {
-    background: #2b3c54;
+    background: #1f2937;
 }
 
 .dark-mode .legal-header {
-    background: #3f5068;
+    background: #374151;
     border-color: #4b5563;
 }
 
 .dark-mode .legal-contact-info .contact-item {
-    background: #2b3c54;
+    background: #1f2937;
     border-color: #4b5563;
 }
 
