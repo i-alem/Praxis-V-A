@@ -26,24 +26,27 @@ export function initButterfly() {
     
     window.addEventListener('scroll', () => {
         const butterfly = document.querySelector('.butterfly-container');
-        if (!butterfly) return;
+        const footer = document.querySelector('.footer');
+        if (!butterfly || !footer) return;
         
         const scrolled = window.pageYOffset;
         const scrollDirection = scrolled > lastScroll ? 1 : -1;
         scrollSpeed = Math.abs(scrolled - lastScroll);
-        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
         
-        // Boundaries: navbar height and footer start
+        // Calculate footer position
+        const footerTop = footer.offsetTop;
         const navbarHeight = 100;
-        const footerHeight = 500;
-        const maxVertical = maxScroll - footerHeight;
+        const butterflyHeight = 320;
+        
+        // Maximum vertical position (stop before footer)
+        const maxVertical = footerTop - navbarHeight - butterflyHeight - 50;
         
         // Horizontal movement - more to the left
         const horizontalMove = Math.sin(scrolled * 0.008) * 120 - 80;
         
         // Vertical follows scroll smoothly but stays within boundaries
         let verticalMove = scrolled * 0.35;
-        verticalMove = Math.max(navbarHeight, Math.min(verticalMove, maxVertical));
+        verticalMove = Math.max(0, Math.min(verticalMove, maxVertical));
         
         // Tilt based on direction and speed
         const tilt = scrollDirection * Math.min(scrollSpeed * 0.5, 8);

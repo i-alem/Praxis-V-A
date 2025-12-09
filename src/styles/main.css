@@ -1153,6 +1153,10 @@ body {
     opacity: 0.5;
 }
 
+.dark-mode .butterfly path {
+    fill: #accfe2;
+}
+
 /* Content Blocks - Layer 2 */
 .hero, .services, .practice, .reviews, .footer {
     position: relative;
