@@ -69,10 +69,9 @@ p {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #e5e7eb;
     z-index: 100;
     transition: all 0.3s ease;
 }
@@ -787,7 +786,7 @@ p {
     }
 
     .dark-mode-toggle.desktop-only {
-        display: flex;
+        display: none;
     }
 
     .nav-menu {
@@ -795,7 +794,9 @@ p {
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background-color: white;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
         width: 100%;
         height: calc(100vh - 70px);
         text-align: center;
@@ -803,6 +804,12 @@ p {
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
         padding: 2rem 0;
         gap: 1rem;
+    }
+
+    .dark-mode .nav-menu {
+        background: rgba(31, 41, 55, 0.7);
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
     }
 
     .nav-menu.active {
@@ -1227,11 +1234,11 @@ body {
 }
 
 .dark-mode-toggle.mobile-only {
-    display: flex;
+    display: none;
 }
 
 .dark-mode-toggle.desktop-only {
-    display: none;
+    display: flex;
 }
 
 .dark-mode-toggle:hover {
@@ -1275,10 +1282,8 @@ body {
 }
 
 .dark-mode .navbar {
-    background: rgba(31, 41, 55, 0.7);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border-bottom-color: rgba(55, 65, 81, 0.5);
+    background: rgba(31, 41, 55, 0.95);
+    border-bottom-color: #374151;
 }
 
 .dark-mode .nav-logo,
