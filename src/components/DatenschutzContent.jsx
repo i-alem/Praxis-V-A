@@ -47,7 +47,7 @@ export function DatenschutzContent() {
                         <path d="m22 7-10 5L2 7"/>
                     </svg>
                     <div class="contact-text">
-                        <a href="mailto:info@praxis-v-a.de">info@praxis-v-a.de</a>
+                        <a href="mailto:info@praxis-v-a.com">info@praxis-v-a.com</a>
                     </div>
                 </div>
             </div>
@@ -130,8 +130,5 @@ export function DatenschutzContent() {
             </div>
         </div>
 
-        <div class="legal-back">
-            <a href="/" class="btn btn-primary">Zurück zur Startseite</a>
-        </div>
     `;
 }

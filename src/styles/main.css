@@ -38,7 +38,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
     color: #1f2937;
-    background: #f8fafc;
+    background: #fefcf9;
 }
 
 .container {
@@ -69,7 +69,7 @@ p {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(254, 252, 249, 0.92);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid #e5e7eb;
     z-index: 100;
@@ -323,11 +323,11 @@ p {
 }
 
 .service-card {
-    background: white;
+    background: transparent;
     padding: 2rem;
     border-radius: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    border: 1px solid #e5e7eb;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
     text-align: center;
     position: relative;
@@ -336,8 +336,92 @@ p {
 
 .service-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.06);
     border-color: #98bbce;
+}
+
+/* Service card expand / collapse */
+.service-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    margin: 0.75rem auto 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    color: #6b7280;
+    transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    flex-shrink: 0;
+}
+
+.service-toggle:hover {
+    color: #98bbce;
+    border-color: #98bbce;
+    background: rgba(152, 187, 206, 0.08);
+}
+
+.service-expand-icon {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.service-card.expanded .service-expand-icon {
+    transform: rotate(180deg);
+}
+
+.service-details {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s ease, padding-top 0.35s ease;
+    padding-top: 0;
+}
+
+.service-details-inner {
+    overflow: hidden;
+    min-height: 0;
+}
+
+.service-card.expanded .service-details {
+    grid-template-rows: 1fr;
+    padding-top: 1rem;
+}
+
+.service-long-desc {
+    font-size: 0.9rem;
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.service-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.service-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.meta-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #98bbce;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.meta-value {
+    font-size: 0.85rem;
+    color: #4b5563;
 }
 
 .service-icon {
@@ -434,7 +518,7 @@ p {
 /* Reviews */
 .reviews {
     padding: 40px 0 60px;
-    background: white;
+    background: transparent;
     overflow: hidden;
 }
 
@@ -460,8 +544,8 @@ p {
 }
 
 .review-card {
-    background: white;
-    border: 1px solid #f3f4f6;
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 0.75rem;
     padding: 1.25rem;
     min-width: 300px;
@@ -470,6 +554,7 @@ p {
     text-align: center;
     position: relative;
     z-index: 2;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
 }
 
 .review-stars {
@@ -651,7 +736,7 @@ p {
 /* Legal Pages */
 .legal-content {
     padding: 100px 0 60px;
-    background: white;
+    background: #fefcf9;
     min-height: calc(100vh - 140px);
 }
 
@@ -659,7 +744,7 @@ p {
     text-align: center;
     margin-bottom: 3rem;
     padding: 2rem 0;
-    background: #f8fafc;
+    background: #fefcf9;
     border-radius: 1rem;
     border: 1px solid #e5e7eb;
 }
@@ -794,7 +879,7 @@ p {
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background: rgba(255, 255, 255, 0.7);
+        background: rgba(254, 252, 249, 0.88);
         backdrop-filter: blur(20px) saturate(180%);
         -webkit-backdrop-filter: blur(20px) saturate(180%);
         width: 100%;
@@ -1116,49 +1201,67 @@ body {
     z-index: 0;
 }
 
-/* Butterfly Animation - Layer 1 */
+/* Butterfly Flock — always behind page content */
 .butterfly-container {
     position: fixed;
-    top: 150px;
-    right: 18%;
-    width: 280px;
-    height: 320px;
+    top: 180px;
+    left: calc(50% + 90px);
+    width: 200px;
+    height: 190px;
     pointer-events: none;
-    z-index: 1;
-    transition: transform 0.4s ease-out;
-    --flap-speed: 1.5s;
+    z-index: 0;
+    transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.butterfly {
+/* Each butterfly's position wrapper */
+.bf-wrapper {
+    position: absolute;
+}
+
+/* Sizing + float animation applied inline */
+.bf-item {
+    position: relative;
+    will-change: transform;
+}
+
+.bf-item svg {
     width: 100%;
     height: 100%;
-    filter: drop-shadow(0 2px 8px rgba(152, 187, 206, 0.25));
+    overflow: visible;
 }
 
-.wing {
-    transform-origin: 37.5px 42.5px;
-    animation: flap var(--flap-speed) ease-in-out infinite;
+/* Wing flap — both wings fold toward body axis (x=20) */
+.bf-wing-l {
+    transform-origin: 20px 16px;
+    animation: bf-flap var(--bf-speed, 2s) ease-in-out infinite;
 }
 
-.wing-left {
-    animation-delay: 0s;
+.bf-wing-r {
+    transform-origin: 20px 16px;
+    animation: bf-flap var(--bf-speed, 2s) ease-in-out infinite 0.05s;
 }
 
-.wing-right {
-    animation-delay: 0.15s;
+@keyframes bf-flap {
+    0%, 100% { transform: scaleX(1); }
+    50%       { transform: scaleX(0.08); }
 }
 
-@keyframes flap {
-    0%, 100% {
-        transform: rotateX(0deg);
-    }
-    50% {
-        transform: rotateX(20deg);
-    }
+/* Three float variants for natural flock movement */
+@keyframes bf-float-0 {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-7px); }
+}
+@keyframes bf-float-1 {
+    0%, 100% { transform: translateY(-4px); }
+    50%       { transform: translateY(6px); }
+}
+@keyframes bf-float-2 {
+    0%, 100% { transform: translateY(3px); }
+    50%       { transform: translateY(-6px); }
 }
 
 .dark-mode .butterfly-container {
-    opacity: 0.5;
+    opacity: 0.42;
 }
 
 /* Content Blocks - Layer 2 */
@@ -1185,28 +1288,22 @@ body {
 
 @media (max-width: 1024px) {
     .butterfly-container {
-        width: 200px;
-        height: 230px;
-        right: 15%;
+        left: calc(50% + 40px);
+        top: 150px;
     }
 }
 
 @media (max-width: 768px) {
     .butterfly-container {
-        width: 140px;
-        height: 160px;
-        right: 10%;
-        top: 120px;
+        left: calc(50% + 10px);
+        top: 110px;
+        scale: 0.75;
     }
 }
 
 @media (max-width: 480px) {
     .butterfly-container {
-        width: 100px;
-        height: 115px;
-        opacity: 0.4;
-        right: 8%;
-        top: 100px;
+        display: none;
     }
 }
 
@@ -1278,7 +1375,7 @@ body {
 /* Dark Mode Styles */
 .dark-mode {
     background: #1f2937;
-    color: #e5e7eb;
+    color: #ffffff;
 }
 
 .dark-mode .navbar {
@@ -1288,7 +1385,7 @@ body {
 
 .dark-mode .nav-logo,
 .dark-mode .nav-logo span {
-    color: #e5e7eb;
+    color: #ffffff;
 }
 
 .dark-mode .nav-link {
@@ -1313,7 +1410,7 @@ body {
 }
 
 .dark-mode .bar {
-    background-color: #e5e7eb;
+    background-color: #ffffff;
 }
 
 .dark-mode .hero {
@@ -1323,7 +1420,7 @@ body {
 .dark-mode .hero-title,
 .dark-mode .section-title,
 .dark-mode h1, .dark-mode h2, .dark-mode h3 {
-    color: #e5e7eb;
+    color: #ffffff;
 }
 
 .dark-mode .hero-subtitle,
@@ -1360,8 +1457,9 @@ body {
 }
 
 .dark-mode .service-card {
-    background: #374151;
-    border-color: #4b5563;
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2), 0 1px 4px rgba(0, 0, 0, 0.15);
 }
 
 .dark-mode .service-card:hover {
@@ -1369,7 +1467,31 @@ body {
 }
 
 .dark-mode .service-card h3 {
-    color: #e5e7eb;
+    color: #ffffff;
+}
+
+.dark-mode .service-toggle {
+    border-color: rgba(255, 255, 255, 0.15);
+    color: #9ca3af;
+}
+
+.dark-mode .service-toggle:hover {
+    color: #98bbce;
+    border-color: #98bbce;
+    background: rgba(152, 187, 206, 0.1);
+}
+
+.dark-mode .service-long-desc {
+    color: #d1d5db;
+    border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+.dark-mode .meta-label {
+    color: #98bbce;
+}
+
+.dark-mode .meta-value {
+    color: #d1d5db;
 }
 
 .dark-mode .service-card p {
@@ -1381,7 +1503,7 @@ body {
 }
 
 .dark-mode .practice-text h3 {
-    color: #e5e7eb;
+    color: #ffffff;
 }
 
 .dark-mode .practice-text p {
@@ -1389,7 +1511,7 @@ body {
 }
 
 .dark-mode .feature {
-    color: #e5e7eb;
+    color: #ffffff;
 }
 
 .dark-mode .reviews {
@@ -1397,8 +1519,9 @@ body {
 }
 
 .dark-mode .review-card {
-    background: #1f2937;
-    border-color: #4b5563;
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
 }
 
 .dark-mode .review-comment {
@@ -1406,20 +1529,20 @@ body {
 }
 
 .dark-mode .review-name {
-    color: #e5e7eb;
+    color: #ffffff;
 }
 
 .dark-mode .hero-reviews .review-card {
-    background: #374151;
-    border-color: #4b5563;
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.1);
 }
 
 .dark-mode .hero-reviews .review-comment {
-    color: #e5e7eb;
+    color: #ffffff;
 }
 
 .dark-mode .hero-reviews .review-name {
-    color: #e5e7eb;
+    color: #ffffff;
 }
 
 .dark-mode .hero-reviews .review-date {
@@ -1454,7 +1577,7 @@ body {
 
 .dark-mode .legal-contact-info .contact-text span,
 .dark-mode .legal-contact-info .contact-text a {
-    color: #e5e7eb;
+    color: #ffffff;
 }
 
 .dark-mode .legal-info p,
@@ -1517,8 +1640,8 @@ body {
 }
 
 .hero-reviews .review-card {
-    background: white;
-    border: 1px solid #f3f4f6;
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 0.75rem;
     padding: 1.25rem;
     min-width: 360px;

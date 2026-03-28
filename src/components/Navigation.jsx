@@ -123,10 +123,10 @@ export function initNavigation() {
         const navbar = document.querySelector('.navbar');
         const isDark = document.body.classList.contains('dark-mode');
         if (window.scrollY > 50) {
-            navbar.style.background = isDark ? 'rgba(31, 41, 55, 0.98)' : 'rgba(255, 255, 255, 0.98)';
-            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            navbar.style.background = isDark ? 'rgba(31, 41, 55, 0.98)' : 'rgba(254, 252, 249, 0.98)';
+            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.08)';
         } else {
-            navbar.style.background = isDark ? 'rgba(31, 41, 55, 0.95)' : 'rgba(255, 255, 255, 0.95)';
+            navbar.style.background = isDark ? 'rgba(31, 41, 55, 0.95)' : 'rgba(254, 252, 249, 0.92)';
             navbar.style.boxShadow = 'none';
         }
     };

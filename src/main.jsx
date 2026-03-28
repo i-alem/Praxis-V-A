@@ -1,7 +1,7 @@
 import './styles/main.css';
 import { Navigation, initNavigation } from './components/Navigation.jsx';
 import { Hero } from './components/Hero.jsx';
-import { Services } from './components/Services.jsx';
+import { Services, initServices } from './components/Services.jsx';
 import { Practice } from './components/Practice.jsx';
 import { Footer } from './components/Footer.jsx';
 import { Butterfly, initButterfly } from './components/Butterfly.jsx';
@@ -28,6 +28,7 @@ function initMainPage() {
     initSmoothScrolling();
     initScrollAnimations();
     initButterfly();
+    initServices();
 }
 
 // Initialize when DOM is loaded

@@ -54,8 +54,5 @@ export function ImpressumContent() {
             </div>
         </div>
 
-        <div class="legal-back">
-            <a href="/" class="btn btn-primary">Zurück zur Startseite</a>
-        </div>
     `;
 }

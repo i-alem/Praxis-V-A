@@ -38,7 +38,7 @@ export function Footer() {
                                 <path d="m22 7-10 5L2 7"/>
                             </svg>
                             <div class="contact-text">
-                                <a href="mailto:info@praxis-v-a.de">info@praxis-v-a.de</a>
+                                <a href="mailto:info@praxis-v-a.com">info@praxis-v-a.com</a>
                             </div>
                         </div>
                     </div>
