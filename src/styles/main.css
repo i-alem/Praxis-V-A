@@ -74,6 +74,7 @@ p {
     border-bottom: 1px solid #e5e7eb;
     z-index: 100;
     transition: all 0.3s ease;
+    overflow: visible;
 }
 
 .nav-container {
@@ -876,29 +877,36 @@ p {
 
     .nav-menu {
         position: fixed;
-        left: -100%;
+        left: 0;
         top: 70px;
         flex-direction: column;
-        background: rgba(254, 252, 249, 0.88);
-        backdrop-filter: blur(20px) saturate(180%);
-        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        background: rgba(255, 253, 250, 0.82);
+        backdrop-filter: blur(24px) saturate(200%);
+        -webkit-backdrop-filter: blur(24px) saturate(200%);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
         width: 100%;
-        height: calc(100vh - 70px);
+        height: auto;
         text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-        padding: 2rem 0;
+        transform: translateY(-110%);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.35s ease, opacity 0.35s ease;
+        padding: 1.5rem 0;
         gap: 1rem;
     }
 
     .dark-mode .nav-menu {
-        background: rgba(31, 41, 55, 0.7);
-        backdrop-filter: blur(20px) saturate(180%);
-        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        background: rgba(31, 41, 55, 0.78);
+        backdrop-filter: blur(24px) saturate(200%);
+        -webkit-backdrop-filter: blur(24px) saturate(200%);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .nav-menu.active {
-        left: 0;
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
     }
 
     .hamburger.active .bar:nth-child(2) {
