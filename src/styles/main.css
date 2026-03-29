@@ -1448,7 +1448,10 @@ html.dark-mode, .dark-mode {
     color: white;
 }
 
-.dark-mode .btn-primary::after,
+.dark-mode .btn-primary::after {
+    background: var(--clr-accent);
+}
+
 .dark-mode .btn-secondary::after {
     background: white;
 }
