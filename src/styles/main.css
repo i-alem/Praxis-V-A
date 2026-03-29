@@ -1007,13 +1007,13 @@ p {
         opacity: 0;
         pointer-events: none;
         transition: transform 0.35s ease, opacity 0.35s ease;
-        padding: 1rem 0;
-        gap: 0;
+        padding: 1.5rem 0;
+        gap: 1rem;
     }
 
     .nav-menu .nav-link {
-        padding: 0.9rem 1.5rem;
-        width: 100%;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
     }
 
     .dark-mode .nav-menu {
