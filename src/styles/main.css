@@ -23,6 +23,41 @@
     font-display: swap;
 }
 
+/* ═══════════════════════════════════════════════════
+   DESIGN TOKENS — change here, applies everywhere
+   ═══════════════════════════════════════════════════ */
+:root {
+    /* Colours */
+    --clr-bg:           #fdf5ec;   /* warm cream background */
+    --clr-text:         #1f2937;   /* near-black body text  */
+    --clr-text-muted:   #6b7280;   /* secondary text        */
+    --clr-text-subtle:  #9ca3af;   /* footer copyright, placeholders */
+    --clr-accent:       #3f5068;   /* dark-blue accent / buttons */
+    --clr-accent-dark:  #2b3c54;   /* hover darken of accent */
+    --clr-border:       rgba(0, 0, 0, 0.08);
+    --clr-separator:    #e5e7eb;
+
+    /* Dark-mode colours (applied under .dark-mode) */
+    --clr-dm-bg:        #1f2937;
+    --clr-dm-bg-alt:    #374151;
+    --clr-dm-text:      #ffffff;
+    --clr-dm-muted:     #d1d5db;
+    --clr-dm-subtle:    #9ca3af;
+    --clr-dm-border:    rgba(255, 255, 255, 0.1);
+
+    /* Typography */
+    --font-serif:       'Crimson Text', serif;
+    --font-sans:        -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    /* Spacing */
+    --nav-h:            70px;
+    --radius:           1rem;
+    --radius-sm:        0.5rem;
+
+    /* Transitions */
+    --ease:             0.3s ease;
+}
+
 /* Reset */
 * {
     margin: 0;
@@ -38,7 +73,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
     color: #1f2937;
-    background: #fdf5ec;
+    background: var(--clr-bg);
 }
 
 .container {
@@ -61,7 +96,7 @@ h3 { font-size: 1.5rem; }
 
 p {
     margin-bottom: 1rem;
-    color: #6b7280;
+    color: var(--clr-text-muted);
 }
 
 /* Navigation */
@@ -339,17 +374,11 @@ p {
 .service-card {
     display: flex;
     flex-direction: column;
-    border-radius: 1rem;
+    border-radius: var(--radius);
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--clr-border);
     position: relative;
     cursor: pointer;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-card:hover {
-    border-color: #3f5068;
-    box-shadow: 0 4px 20px rgba(63, 80, 104, 0.12);
 }
 
 .service-image {
@@ -805,14 +834,14 @@ p {
 }
 
 .footer-content p {
-    color: #9ca3af;
+    color: var(--clr-text-subtle);
     margin: 0;
 }
 
 /* Legal Pages */
 .legal-content {
     padding: 100px 0 60px;
-    background: #fefcf9;
+    background: var(--clr-bg);
     min-height: calc(100vh - 140px);
 }
 
@@ -820,9 +849,6 @@ p {
     text-align: center;
     margin-bottom: 3rem;
     padding: 2rem 0;
-    background: #fefcf9;
-    border-radius: 1rem;
-    border: 1px solid #e5e7eb;
 }
 
 .legal-header h1 {
@@ -841,11 +867,8 @@ p {
 }
 
 .legal-contact-info .contact-item {
-    background: white;
-    padding: 0.75rem 1rem;
-    border-radius: 0.5rem;
-    border: 1px solid #e5e7eb;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 0;
+    color: var(--clr-text-muted);
 }
 
 .legal-contact-info .contact-item svg {
@@ -856,11 +879,11 @@ p {
 
 .legal-contact-info .contact-text span,
 .legal-contact-info .contact-text a {
-    color: #1f2937;
-    font-size: 0.875rem;
-    font-weight: 500;
+    color: var(--clr-text);
+    font-size: 1rem;
+    font-weight: 400;
     text-decoration: none;
-    line-height: 1.2;
+    line-height: 1.4;
 }
 
 .legal-contact-info .contact-text a {
@@ -1378,16 +1401,16 @@ p {
 }
 
 .dark-mode .nav-link::after {
-    background-color: #3f5068;
+    background-color: white;
 }
 
 .dark-mode .cta-link {
-    background: #3f5068;
-    color: #1f2937 !important;
+    background: white;
+    color: var(--clr-accent) !important;
 }
 
 .dark-mode .cta-link:hover {
-    background: #2b3c54;
+    background: #f3f4f6;
 }
 
 .dark-mode .bar {
@@ -1411,17 +1434,17 @@ p {
 }
 
 .dark-mode .highlight {
-    color: #3f5068;
+    color: white;
 }
 
 .dark-mode .btn-primary {
-    background: #3f5068;
-    color: #1f2937;
+    background: white;
+    color: var(--clr-accent);
 }
 
 .dark-mode .btn-secondary {
-    border-color: #3f5068;
-    color: #3f5068;
+    border-color: white;
+    color: white;
 }
 
 .dark-mode .service-card {
@@ -1531,17 +1554,15 @@ p {
 }
 
 .dark-mode .legal-content {
-    background: #1f2937;
+    background: var(--clr-dm-bg);
 }
 
 .dark-mode .legal-header {
-    background: #374151;
-    border-color: #4b5563;
+    background: transparent;
 }
 
 .dark-mode .legal-contact-info .contact-item {
-    background: #1f2937;
-    border-color: #4b5563;
+    background: transparent;
 }
 
 .dark-mode .legal-contact-info .contact-text span,

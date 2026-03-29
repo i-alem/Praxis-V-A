@@ -1,15 +1,16 @@
 // Single source of truth for all practice data
 export const PRAXIS = {
     name:       'Praxis Vital & Active',
-    street:     'Kaiserdamm',
+    street:     'Kaiserdamm 9',
     city:       '14059 Berlin',
     phone:      '+49 179 12345678',
-    phoneTel:   '+4917912345678',
+    phoneTel:   '+49 179 12345678',
     email:      'info@praxis-v-a.com',
     bookingUrl: 'https://medifox.de/termine',
+    mapsUrl:    'https://www.google.com/maps/search/Kaiserdamm+9+14059+Berlin',
     hours: [
-        { days: 'Mo – Fr',  time: '08:00 – 18:00' },
-        { days: 'Samstag',  time: '09:00 – 13:00' },
+        { days: 'Mo – Fr',  time: '09:00 – 20:00' },
+        { days: 'Samstag',  time: '10:00 – 13:00' },
         { days: 'Sonntag',  time: 'Geschlossen'    },
     ],
 };
@@ -23,8 +24,8 @@ export function contactBlock() {
                 <circle cx="12" cy="10" r="3"/>
             </svg>
             <div class="contact-text">
-                <span>${PRAXIS.street}</span>
-                <span>${PRAXIS.city}</span>
+                <a href="${PRAXIS.mapsUrl}" target="_blank" rel="noopener">${PRAXIS.street}</a>
+                <a href="${PRAXIS.mapsUrl}" target="_blank" rel="noopener">${PRAXIS.city}</a>
             </div>
         </div>
         <div class="contact-item">
