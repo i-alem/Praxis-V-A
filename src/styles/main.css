@@ -327,9 +327,8 @@ p {
 }
 
 .service-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.06);
-    border-color: #98bbce;
+    box-shadow: 0 0 0 2px #3f5068;
+    border-color: #3f5068;
 }
 
 .service-image {
@@ -350,10 +349,8 @@ p {
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 1.25rem 1.5rem 1rem;
-    background: rgba(255, 253, 250, 0.82);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    padding: 2.5rem 1.5rem 1rem;
+    background: linear-gradient(to bottom, transparent 0%, rgba(253, 245, 236, 0.72) 50%, rgba(253, 245, 236, 0.92) 100%);
     text-align: left;
 }
 
@@ -1343,11 +1340,12 @@ p {
 }
 
 .dark-mode .service-card:hover {
+    box-shadow: 0 0 0 2px #98bbce;
     border-color: #98bbce;
 }
 
 .dark-mode .service-overlay {
-    background: rgba(31, 41, 55, 0.82);
+    background: linear-gradient(to bottom, transparent 0%, rgba(17, 24, 39, 0.72) 50%, rgba(17, 24, 39, 0.92) 100%);
 }
 
 .dark-mode .service-overlay h3 {
