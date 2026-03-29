@@ -67,6 +67,7 @@
 
 html {
     scroll-behavior: smooth;
+    background: var(--clr-bg);
 }
 
 body {
@@ -1377,7 +1378,7 @@ p {
 
 
 /* Dark Mode Styles */
-.dark-mode {
+html.dark-mode, .dark-mode {
     background: #1f2937;
     color: #ffffff;
 }
@@ -1447,6 +1448,11 @@ p {
     color: white;
 }
 
+.dark-mode .btn-primary::after,
+.dark-mode .btn-secondary::after {
+    background: white;
+}
+
 .dark-mode .service-card {
     border-color: rgba(255, 255, 255, 0.1);
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2), 0 1px 4px rgba(0, 0, 0, 0.15);
@@ -1482,7 +1488,7 @@ p {
 }
 
 .dark-mode .meta-label {
-    color: #3f5068;
+    color: var(--clr-dm-muted);
 }
 
 .dark-mode .meta-value {
@@ -1551,6 +1557,10 @@ p {
 
 .dark-mode .footer {
     background: #1a2332;
+}
+
+.dark-mode .footer-content p {
+    color: var(--clr-text-subtle);
 }
 
 .dark-mode .legal-content {
