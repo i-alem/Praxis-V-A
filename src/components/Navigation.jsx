@@ -26,7 +26,7 @@ export function Navigation() {
                     <span>${PRAXIS.name}</span>
                 </a>
                 <div class="nav-right">
-                    <button class="dark-mode-toggle mobile-only" id="dark-mode-toggle-mobile" aria-label="Dark Mode umschalten">
+                    <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Dark Mode umschalten">
                         ${darkToggleSvg}
                     </button>
                     <div class="hamburger" id="hamburger">
@@ -38,9 +38,6 @@ export function Navigation() {
                 <div class="nav-menu" id="nav-menu">
                     <a href="#services" class="nav-link">Leistungen</a>
                     <a href="#practice" class="nav-link">Praxis</a>
-                    <button class="dark-mode-toggle desktop-only" id="dark-mode-toggle-desktop" aria-label="Dark Mode umschalten">
-                        ${darkToggleSvg}
-                    </button>
                     <a href="${PRAXIS.bookingUrl}" target="_blank" class="nav-link cta-link">Termin buchen</a>
                 </div>
             </div>
@@ -123,6 +120,5 @@ export function initNavigation() {
         updateNavbarScroll();
     };
 
-    document.getElementById('dark-mode-toggle-mobile')?.addEventListener('click', toggleDarkMode);
-    document.getElementById('dark-mode-toggle-desktop')?.addEventListener('click', toggleDarkMode);
+    document.getElementById('dark-mode-toggle')?.addEventListener('click', toggleDarkMode);
 }

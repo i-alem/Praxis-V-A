@@ -989,13 +989,6 @@ p {
         display: flex;
     }
 
-    .dark-mode-toggle.mobile-only {
-        display: flex;
-    }
-
-    .dark-mode-toggle.desktop-only {
-        display: none;
-    }
 
     .nav-menu {
         position: fixed;
@@ -1342,13 +1335,6 @@ p {
     flex-shrink: 0;
 }
 
-.dark-mode-toggle.mobile-only {
-    display: none;
-}
-
-.dark-mode-toggle.desktop-only {
-    display: flex;
-}
 
 .dark-mode-toggle:hover {
     opacity: 0.6;
