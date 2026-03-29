@@ -396,14 +396,14 @@ p {
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 5rem 1.5rem 0.75rem;
-    background: linear-gradient(to bottom, transparent 0%, rgba(253, 245, 236, 0.5) 25%, rgba(253, 245, 236, 0.95) 100%);
+    padding: 8rem 1.5rem 0.75rem;
+    background: linear-gradient(to bottom, transparent 0%, rgba(253, 245, 236, 0.4) 40%, rgba(253, 245, 236, 0.95) 100%);
     cursor: pointer;
     text-align: center;
 }
 
 .service-overlay h3 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 400;
     color: #1f2937;
     margin-bottom: 0.3rem;
@@ -1460,7 +1460,7 @@ html.dark-mode, .dark-mode {
 }
 
 .dark-mode .service-overlay {
-    background: linear-gradient(to bottom, transparent 0%, rgba(17, 24, 39, 0.5) 25%, rgba(17, 24, 39, 0.95) 100%);
+    background: linear-gradient(to bottom, transparent 0%, rgba(17, 24, 39, 0.4) 40%, rgba(17, 24, 39, 0.95) 100%);
 }
 
 .dark-mode .service-overlay h3 {
