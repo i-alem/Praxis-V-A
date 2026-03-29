@@ -23,7 +23,7 @@ export function Hero() {
                         </h1>
                         <p class="hero-subtitle">Ihre moderne Physiotherapiepraxis für ganzheitliche Behandlung und nachhaltige Rehabilitation</p>
                         <div class="hero-buttons">
-                            <a href="${PRAXIS.bookingUrl}" target="_blank" class="btn btn-primary">Termin vereinbaren</a>
+                            <a href="${PRAXIS.bookingUrl}" target="_blank" class="btn btn-primary">Termin buchen</a>
                             <a href="#services" class="btn btn-secondary">Unsere Leistungen</a>
                         </div>
                     </div>
