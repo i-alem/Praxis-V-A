@@ -1,29 +1,33 @@
-// Navigation Component
+import { PRAXIS } from '../data/config.js';
+
+const darkToggleSvg = `
+    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="5"/>
+        <line x1="12" y1="1" x2="12" y2="3"/>
+        <line x1="12" y1="21" x2="12" y2="23"/>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+        <line x1="1" y1="12" x2="3" y2="12"/>
+        <line x1="21" y1="12" x2="23" y2="12"/>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+    </svg>
+    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+    </svg>`;
+
 export function Navigation() {
     return `
         <nav class="navbar">
             <div class="nav-container">
                 <a href="/" class="nav-logo">
-                    <img class="logo-light" src="/logo-light.svg" alt="Praxis Vital & Active Logo" width="40" height="40">
-                    <img class="logo-dark" src="/logo-dark.svg" alt="Praxis Vital & Active Logo" width="40" height="40">
-                    <span>Praxis Vital & Active</span>
+                    <img class="logo-light" src="/logo-light.svg" alt="${PRAXIS.name} Logo" width="40" height="40">
+                    <img class="logo-dark"  src="/logo-dark.svg"  alt="${PRAXIS.name} Logo" width="40" height="40">
+                    <span>${PRAXIS.name}</span>
                 </a>
                 <div class="nav-right">
                     <button class="dark-mode-toggle mobile-only" id="dark-mode-toggle-mobile" aria-label="Dark Mode umschalten">
-                        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="5"/>
-                            <line x1="12" y1="1" x2="12" y2="3"/>
-                            <line x1="12" y1="21" x2="12" y2="23"/>
-                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-                            <line x1="1" y1="12" x2="3" y2="12"/>
-                            <line x1="21" y1="12" x2="23" y2="12"/>
-                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-                        </svg>
-                        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-                        </svg>
+                        ${darkToggleSvg}
                     </button>
                     <div class="hamburger" id="hamburger">
                         <span class="bar"></span>
@@ -35,31 +39,16 @@ export function Navigation() {
                     <a href="#services" class="nav-link">Leistungen</a>
                     <a href="#practice" class="nav-link">Praxis</a>
                     <button class="dark-mode-toggle desktop-only" id="dark-mode-toggle-desktop" aria-label="Dark Mode umschalten">
-                        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="5"/>
-                            <line x1="12" y1="1" x2="12" y2="3"/>
-                            <line x1="12" y1="21" x2="12" y2="23"/>
-                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-                            <line x1="1" y1="12" x2="3" y2="12"/>
-                            <line x1="21" y1="12" x2="23" y2="12"/>
-                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-                        </svg>
-                        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-                        </svg>
+                        ${darkToggleSvg}
                     </button>
-                    <a href="https://medifox.de/termine" target="_blank" class="nav-link cta-link">Termin buchen</a>
+                    <a href="${PRAXIS.bookingUrl}" target="_blank" class="nav-link cta-link">Termin buchen</a>
                 </div>
             </div>
         </nav>
     `;
 }
 
-// Initialize navigation functionality
 export function initNavigation() {
-    // Logo click handler
     const navLogo = document.querySelector('.nav-logo');
     if (navLogo) {
         navLogo.addEventListener('click', (e) => {
@@ -72,30 +61,21 @@ export function initNavigation() {
         });
     }
 
-    // Section link handlers
     document.querySelectorAll('.nav-link[href^="#"]').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const href = link.getAttribute('href');
-            const section = href.substring(1);
-            
             if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
-                const target = document.getElementById(section);
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 70,
-                        behavior: 'smooth'
-                    });
-                }
+                const target = document.getElementById(href.substring(1));
+                if (target) window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
             } else {
                 window.location.href = `/${href}`;
             }
         });
     });
 
-    // Mobile menu
     const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
+    const navMenu   = document.getElementById('nav-menu');
 
     if (hamburger && navMenu) {
         hamburger.addEventListener('click', () => {
@@ -118,43 +98,31 @@ export function initNavigation() {
         });
     }
 
-    // Navbar scroll effect
     const updateNavbarScroll = () => {
-        const navbar = document.querySelector('.navbar');
-        const isDark = document.body.classList.contains('dark-mode');
+        const navbar  = document.querySelector('.navbar');
+        const isDark  = document.body.classList.contains('dark-mode');
         if (window.scrollY > 50) {
-            navbar.style.background = isDark ? 'rgba(31, 41, 55, 0.98)' : 'rgba(254, 252, 249, 0.98)';
-            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.08)';
+            navbar.style.background  = isDark ? 'rgba(31, 41, 55, 0.98)' : 'rgba(253, 245, 236, 0.98)';
+            navbar.style.boxShadow   = '0 2px 20px rgba(0, 0, 0, 0.08)';
         } else {
-            navbar.style.background = isDark ? 'rgba(31, 41, 55, 0.95)' : 'rgba(254, 252, 249, 0.92)';
-            navbar.style.boxShadow = 'none';
+            navbar.style.background  = isDark ? 'rgba(31, 41, 55, 0.95)' : 'rgba(253, 245, 236, 0.92)';
+            navbar.style.boxShadow   = 'none';
         }
     };
-    
     window.addEventListener('scroll', updateNavbarScroll);
 
-    // Dark mode toggle
-    const darkModeToggleMobile = document.getElementById('dark-mode-toggle-mobile');
-    const darkModeToggleDesktop = document.getElementById('dark-mode-toggle-desktop');
     const savedMode = localStorage.getItem('darkMode');
-    
     if (savedMode === 'enabled') {
         document.body.classList.add('dark-mode');
         updateNavbarScroll();
     }
-    
+
     const toggleDarkMode = () => {
         document.body.classList.toggle('dark-mode');
-        const isDark = document.body.classList.contains('dark-mode');
-        localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode') ? 'enabled' : 'disabled');
         updateNavbarScroll();
     };
-    
-    if (darkModeToggleMobile) {
-        darkModeToggleMobile.addEventListener('click', toggleDarkMode);
-    }
-    
-    if (darkModeToggleDesktop) {
-        darkModeToggleDesktop.addEventListener('click', toggleDarkMode);
-    }
+
+    document.getElementById('dark-mode-toggle-mobile')?.addEventListener('click', toggleDarkMode);
+    document.getElementById('dark-mode-toggle-desktop')?.addEventListener('click', toggleDarkMode);
 }

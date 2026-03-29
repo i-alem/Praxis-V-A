@@ -1,43 +1,32 @@
-// Practice Component
+import { PRAXIS } from '../data/config.js';
+
+const features = [
+    'Moderne Behandlungsräume',
+    'Neueste Therapiegeräte',
+    'Barrierefreier Zugang',
+    'Parkplätze vor Ort',
+];
+
+const images = [
+    { src: 'https://images.pexels.com/photos/6111565/pexels-photo-6111565.jpeg?auto=compress&cs=tinysrgb&w=400', alt: 'Behandlungsraum'  },
+    { src: 'https://images.pexels.com/photos/6111368/pexels-photo-6111368.jpeg?auto=compress&cs=tinysrgb&w=400', alt: 'Therapiegeräte'   },
+    { src: 'https://images.pexels.com/photos/6111707/pexels-photo-6111707.jpeg?auto=compress&cs=tinysrgb&w=400', alt: 'Empfangsbereich'  },
+    { src: 'https://images.pexels.com/photos/6111164/pexels-photo-6111164.jpeg?auto=compress&cs=tinysrgb&w=400', alt: 'Trainingsbereich' },
+];
+
 export function Practice() {
-    const features = [
-        "Moderne Behandlungsräume",
-        "Neueste Therapiegeräte", 
-        "Barrierefreier Zugang",
-        "Parkplätze vor Ort"
-    ];
-
-    const images = [
-        {
-            src: "https://images.pexels.com/photos/6111565/pexels-photo-6111565.jpeg?auto=compress&cs=tinysrgb&w=400",
-            alt: "Behandlungsraum"
-        },
-        {
-            src: "https://images.pexels.com/photos/6111368/pexels-photo-6111368.jpeg?auto=compress&cs=tinysrgb&w=400", 
-            alt: "Therapiegeräte"
-        },
-        {
-            src: "https://images.pexels.com/photos/6111707/pexels-photo-6111707.jpeg?auto=compress&cs=tinysrgb&w=400",
-            alt: "Empfangsbereich"
-        },
-        {
-            src: "https://images.pexels.com/photos/6111164/pexels-photo-6111164.jpeg?auto=compress&cs=tinysrgb&w=400",
-            alt: "Trainingsbereich"
-        }
-    ];
-
-    const featureList = features.map(feature => `
+    const featureList = features.map(f => `
         <div class="feature">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="20,6 9,17 4,12"/>
             </svg>
-            <span>${feature}</span>
+            <span>${f}</span>
         </div>
     `).join('');
 
-    const galleryImages = images.map(image => `
-        <img src="${image.src}" alt="${image.alt}" loading="lazy">
-    `).join('');
+    const galleryImages = images.map(img =>
+        `<img src="${img.src}" alt="${img.alt}" loading="lazy">`
+    ).join('');
 
     return `
         <section id="practice" class="practice">
@@ -48,16 +37,12 @@ export function Practice() {
                 </div>
                 <div class="practice-content">
                     <div class="practice-text">
-                        <h3>Herzlich willkommen in der <br> Praxis Vital & Active</h3>
+                        <h3>Herzlich willkommen in der <br>${PRAXIS.name}</h3>
                         <p>In unserer modernen Physiotherapiepraxis erwartet Sie eine professionelle und persönliche Betreuung. Unser erfahrenes Team aus qualifizierten Physiotherapeuten steht Ihnen mit individuellen Behandlungskonzepten zur Seite.</p>
-                        <div class="practice-features">
-                            ${featureList}
-                        </div>
+                        <div class="practice-features">${featureList}</div>
                     </div>
                     <div class="practice-gallery">
-                        <div class="gallery-grid">
-                            ${galleryImages}
-                        </div>
+                        <div class="gallery-grid">${galleryImages}</div>
                     </div>
                 </div>
             </div>

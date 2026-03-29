@@ -1,17 +1,14 @@
+import { PRAXIS } from '../data/config.js';
 import { reviews, generateStars } from '../data/reviews.js';
 
-// Hero Component
 export function Hero() {
-    // Generate review cards from data
-    const reviewCards = reviews.map(review => `
+    const reviewCards = reviews.map(r => `
         <div class="review-card">
-            <div class="review-stars">
-                ${generateStars(review.rating)}
-            </div>
-            <p class="review-comment">"${review.comment}"</p>
+            <div class="review-stars">${generateStars(r.rating)}</div>
+            <p class="review-comment">"${r.comment}"</p>
             <div class="review-footer">
-                <span class="review-name">– ${review.name}</span>
-                <span class="review-date">${review.date}</span>
+                <span class="review-name">– ${r.name}</span>
+                <span class="review-date">${r.date}</span>
             </div>
         </div>
     `).join('');
@@ -21,18 +18,16 @@ export function Hero() {
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-text">
-                        <h1 class="hero-title">Willkommen bei der 
-                        <span class="highlight">Praxis Vital & Active</span>
+                        <h1 class="hero-title">Willkommen bei der
+                            <span class="highlight">${PRAXIS.name}</span>
                         </h1>
                         <p class="hero-subtitle">Ihre moderne Physiotherapiepraxis für ganzheitliche Behandlung und nachhaltige Rehabilitation</p>
                         <div class="hero-buttons">
-                            <a href="https://medifox.de/termine" target="_blank" class="btn btn-primary">Termin vereinbaren</a>
+                            <a href="${PRAXIS.bookingUrl}" target="_blank" class="btn btn-primary">Termin vereinbaren</a>
                             <a href="#services" class="btn btn-secondary">Unsere Leistungen</a>
                         </div>
                     </div>
-                    <div class="hero-image">
-                        <!-- Rechte Spalte bleibt für zukünftigen Inhalt reserviert -->
-                    </div>
+                    <div class="hero-image"></div>
                 </div>
                 <div class="hero-reviews">
                     <div class="reviews-ticker">
