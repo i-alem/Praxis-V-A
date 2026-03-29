@@ -1,0 +1,54 @@
+---
+interface Props {
+    title: string;
+    description: string;
+    ogUrl: string;
+    ogTitle?: string;
+    ogDescription?: string;
+}
+
+const { title, description, ogUrl, ogTitle, ogDescription } = Astro.props;
+const ogImage = 'https://www.praxis-v-a.com/og-image.jpg';
+---
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <meta name="description" content={description}>
+
+    <!-- Open Graph -->
+    <meta property="og:type"         content="website">
+    <meta property="og:url"          content={ogUrl}>
+    <meta property="og:site_name"    content="Praxis Vital & Active">
+    <meta property="og:title"        content={ogTitle ?? title}>
+    <meta property="og:description"  content={ogDescription ?? description}>
+    <meta property="og:image"        content={ogImage}>
+    <meta property="og:image:width"  content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale"       content="de_DE">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:title"       content={ogTitle ?? title}>
+    <meta name="twitter:description" content={ogDescription ?? description}>
+    <meta name="twitter:image"       content={ogImage}>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preload" href="/fonts/CrimsonText-Regular.woff2"  as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/CrimsonText-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/CrimsonText-Bold.woff2"     as="font" type="font/woff2" crossorigin>
+
+    <!-- Apply dark mode before paint to avoid flash -->
+    <script is:inline>
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+</head>
+<body>
+    <slot />
+</body>
+</html>

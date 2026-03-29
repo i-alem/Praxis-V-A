@@ -4,11 +4,11 @@
   "description": "Modern website for Praxis-V-A physiotherapy practice",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
-  "devDependencies": {
-    "vite": "^5.0.0"
+  "dependencies": {
+    "astro": "^4.0.0"
   }
 }

@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import LegalHeader from '../components/LegalHeader.astro';
+import DatenschutzContent from '../components/DatenschutzContent.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/main.css';
+---
+
+<Layout
+    title="Datenschutzerklärung – Praxis Vital & Active"
+    description="Datenschutzerklärung der Physiotherapiepraxis Praxis Vital & Active in Berlin."
+    ogUrl="https://www.praxis-v-a.com/datenschutz.html"
+>
+    <Navigation />
+    <section class="legal-content">
+        <div class="container">
+            <LegalHeader title="Datenschutzerklärung" />
+            <DatenschutzContent />
+        </div>
+    </section>
+    <Footer />
+</Layout>

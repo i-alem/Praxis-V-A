@@ -1,4 +1,4 @@
-// Services Component — expandable cards with image + overlay
+---
 const services = [
     {
         image: 'https://images.pexels.com/photos/7579831/pexels-photo-7579831.jpeg?auto=compress&cs=tinysrgb&w=600',
@@ -127,78 +127,68 @@ const services = [
         privatePrice: ['65 €', '85 €'],
     },
 ];
+---
 
-function renderDurationPrice(duration, price) {
-    if (Array.isArray(duration)) {
-        return duration.map((d, i) => `
-            <div class="service-meta-option">
-                <span class="meta-option-duration">${d}</span>
-                <span class="meta-option-price">${price[i]}</span>
-            </div>`).join('');
-    }
-    return `
-        <div class="service-meta-option">
-            <span class="meta-option-duration">${duration}</span>
-            <span class="meta-option-price">${price}</span>
-        </div>`;
-}
-
-function serviceCard(service, index) {
-    return `
-        <div class="service-card" data-index="${index}">
-            <div class="service-image">
-                <img src="${service.image}" alt="${service.title}" loading="lazy">
-                <div class="service-overlay">
-                    <h3>${service.title}</h3>
-                    <p class="service-desc">${service.description}</p>
-                    <button class="service-toggle" aria-expanded="false" aria-label="Details anzeigen">
-                        <svg class="service-expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="6 9 12 15 18 9"/>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            <div class="service-details" aria-hidden="true">
-                <div class="service-details-inner">
-                    <p class="service-long-desc">${service.details}</p>
-                    <div class="service-meta">
-                        <div class="service-meta-item">
-                            <span class="meta-label">Geeignet bei</span>
-                            <span class="meta-value">${service.indication}</span>
+<section id="services" class="services">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Unsere Leistungen</h2>
+            <p class="section-subtitle">Professionelle Physiotherapie für Ihre Gesundheit</p>
+        </div>
+        <div class="services-grid">
+            {services.map((service, i) => (
+                <div class="service-card" data-index={i}>
+                    <div class="service-image">
+                        <img src={service.image} alt={service.title} loading="lazy">
+                        <div class="service-overlay">
+                            <h3>{service.title}</h3>
+                            <p class="service-desc">{service.description}</p>
+                            <button class="service-toggle" aria-expanded="false" aria-label="Details anzeigen">
+                                <svg class="service-expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"/>
+                                </svg>
+                            </button>
                         </div>
-                        <div class="service-meta-item">
-                            <span class="meta-label">Dauer &amp; Preis</span>
-                            ${renderDurationPrice(service.duration, service.privatePrice)}
+                    </div>
+                    <div class="service-details" aria-hidden="true">
+                        <div class="service-details-inner">
+                            <p class="service-long-desc">{service.details}</p>
+                            <div class="service-meta">
+                                <div class="service-meta-item">
+                                    <span class="meta-label">Geeignet bei</span>
+                                    <span class="meta-value">{service.indication}</span>
+                                </div>
+                                <div class="service-meta-item">
+                                    <span class="meta-label">Dauer &amp; Preis</span>
+                                    {Array.isArray(service.duration)
+                                        ? service.duration.map((d, j) => (
+                                            <div class="service-meta-option">
+                                                <span class="meta-option-duration">{d}</span>
+                                                <span class="meta-option-price">{service.privatePrice[j]}</span>
+                                            </div>
+                                        ))
+                                        : (
+                                            <div class="service-meta-option">
+                                                <span class="meta-option-duration">{service.duration}</span>
+                                                <span class="meta-option-price">{service.privatePrice}</span>
+                                            </div>
+                                        )
+                                    }
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>`;
-}
+            ))}
+        </div>
+    </div>
+</section>
 
-export function Services() {
-    const cards = services.map((s, i) => serviceCard(s, i)).join('');
-
-    return `
-        <section id="services" class="services">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Unsere Leistungen</h2>
-                    <p class="section-subtitle">Professionelle Physiotherapie für Ihre Gesundheit</p>
-                </div>
-                <div class="services-grid">
-                    ${cards}
-                </div>
-            </div>
-        </section>`;
-}
-
-export function initServices() {
+<script>
     document.querySelectorAll('.service-card').forEach(card => {
-        const toggle = card.querySelector('.service-toggle');
+        const toggle  = card.querySelector('.service-toggle');
         const details = card.querySelector('.service-details');
         if (!details) return;
-
         card.addEventListener('click', () => {
             const isExpanded = card.classList.contains('expanded');
             card.classList.toggle('expanded');
@@ -206,4 +196,4 @@ export function initServices() {
             details.setAttribute('aria-hidden', String(isExpanded));
         });
     });
-}
+</script>

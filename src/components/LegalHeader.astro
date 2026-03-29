@@ -1,0 +1,18 @@
+---
+import ContactBlock from './ContactBlock.astro';
+
+interface Props {
+    title: string;
+    subtitle?: string;
+}
+
+const { title, subtitle = 'Stand: Januar 2024' } = Astro.props;
+---
+
+<div class="legal-header">
+    <h1>{title}</h1>
+    <p>{subtitle}</p>
+    <div class="legal-contact-info">
+        <ContactBlock />
+    </div>
+</div>
