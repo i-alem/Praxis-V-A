@@ -6,7 +6,8 @@ const services = [
         description: 'Individuelle Behandlung zur Wiederherstellung der Beweglichkeit und Schmerzlinderung',
         details: 'Gezielte Übungstherapie zur Verbesserung von Kraft, Koordination und Mobilität. Wir erstellen individuelle Übungspläne, die exakt auf Ihre Beschwerden und Rehabilitationsziele abgestimmt sind.',
         duration: '20 – 45 Min.',
-        indication: 'Bewegungseinschränkungen, postoperative Reha, Muskelschwäche, Wirbelsäulenbeschwerden'
+        indication: 'Bewegungseinschränkungen, postoperative Reha, Muskelschwäche, Wirbelsäulenbeschwerden',
+        privatePrice: '45 – 80 €',
     },
     {
         icon: '<path d="M9 3h6v3H9z"/><path d="M12 6v3m-3 0h6"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><path d="M9 13.5c0 2 1.5 3.5 3 3.5s3-1.5 3-3.5m-6 4v4m6-4v4"/>',
@@ -14,7 +15,8 @@ const services = [
         description: 'Gezielte Mobilisation von Gelenken und Behandlung von Funktionsstörungen',
         details: 'Spezifische Handgrifftechniken zur Untersuchung und Behandlung von Funktionsstörungen des Bewegungsapparates. Besonders effektiv bei Gelenkblockierungen und chronischen Beschwerden.',
         duration: '30 – 45 Min.',
-        indication: 'Gelenkblockierungen, Rückenschmerzen, Kopfschmerzen, Schulter-Nacken-Probleme'
+        indication: 'Gelenkblockierungen, Rückenschmerzen, Kopfschmerzen, Schulter-Nacken-Probleme',
+        privatePrice: '60 – 90 €',
     },
     {
         icon: '<path d="M12 2c-2 0-3.5 1.5-3.5 3.5S10 9 12 9s3.5-1.5 3.5-3.5S14 2 12 2z"/><path d="M7 10c-1 0-2 1-2 2v3c0 1 1 2 2 2h10c1 0 2-1 2-2v-3c0-1-1-2-2-2"/><path d="M9 17v5m6-5v5"/>',
@@ -22,7 +24,8 @@ const services = [
         description: 'Klassische und therapeutische Massagen zur Entspannung und Durchblutungsförderung',
         details: 'Klassische und therapeutische Massagetechniken lösen Muskelverspannungen, fördern die Durchblutung und reduzieren Stress spürbar. Entspannung und Erholung ab der ersten Behandlung.',
         duration: '25 – 50 Min.',
-        indication: 'Muskelverspannungen, Stressbelastung, Durchblutungsstörungen, Rückenbeschwerden'
+        indication: 'Muskelverspannungen, Stressbelastung, Durchblutungsstörungen, Rückenbeschwerden',
+        privatePrice: '50 – 85 €',
     },
     {
         icon: '<path d="M12 2v4m0 4v4m0 4v4"/><path d="M8 6c-2 1-3 2-3 4s1 3 3 4m8-8c2 1 3 2 3 4s-1 3-3 4"/><path d="M10 10c-1 .5-1.5 1-1.5 2s.5 1.5 1.5 2m4-4c1 .5 1.5 1 1.5 2s-.5 1.5-1.5 2"/>',
@@ -30,7 +33,8 @@ const services = [
         description: 'Sanfte Entstauungstherapie zur Behandlung von Schwellungen und Ödemen',
         details: 'Sanfte, rhythmische Massagetechnik zur Anregung des Lymphflusses und zum Abbau von Schwellungen. Besonders wirksam nach Operationen, Verletzungen oder bei chronischem Lymphödem.',
         duration: '45 – 60 Min.',
-        indication: 'Ödeme, postoperative Schwellungen, Lymphödem, Wassereinlagerungen'
+        indication: 'Ödeme, postoperative Schwellungen, Lymphödem, Wassereinlagerungen',
+        privatePrice: '70 – 100 €',
     },
     {
         icon: '<path d="M12 2v20"/><path d="M8 8l4 4 4-4M8 16l4-4 4 4"/><circle cx="12" cy="6" r="1"/><circle cx="12" cy="18" r="1"/>',
@@ -38,7 +42,8 @@ const services = [
         description: 'Moderne Behandlungsmethoden mit elektrischen Strömen zur Schmerztherapie',
         details: 'Verschiedene elektrische Behandlungsverfahren zur gezielten Schmerzlinderung und Muskelstimulation. Wir setzen TENS, Reizstrom und Ultraschall je nach Beschwerdebild individuell ein.',
         duration: '15 – 30 Min.',
-        indication: 'Chronische Schmerzen, Nervenschäden, Muskelschwäche, Sportverletzungen'
+        indication: 'Chronische Schmerzen, Nervenschäden, Muskelschwäche, Sportverletzungen',
+        privatePrice: '30 – 55 €',
     },
     {
         icon: '<path d="M12 2C8 2 5 5 5 9c0 3 2 5 4 6v5c0 1 1 2 3 2s3-1 3-2v-5c2-1 4-3 4-6 0-4-3-7-7-7z"/><path d="M12 9v6"/><circle cx="12" cy="11" r="1.5"/>',
@@ -46,7 +51,8 @@ const services = [
         description: 'Fango, Heißluft und weitere Wärmeanwendungen zur Muskelentspannung',
         details: 'Fango-Packungen, Heißluft und weitere Wärmeträger entspannen tiefe Muskelschichten und bereiten das Gewebe optimal auf die nachfolgende Behandlung vor. Wohltuende Wirkung bei chronischen Beschwerden.',
         duration: '20 – 30 Min.',
-        indication: 'Muskelverspannungen, degenerative Erkrankungen, Rheuma, chronische Beschwerden'
+        indication: 'Muskelverspannungen, degenerative Erkrankungen, Rheuma, chronische Beschwerden',
+        privatePrice: '35 – 55 €',
     }
 ];
 
@@ -76,6 +82,10 @@ function serviceCard(service, index) {
                         <div class="service-meta-item">
                             <span class="meta-label">Geeignet bei</span>
                             <span class="meta-value">${service.indication}</span>
+                        </div>
+                        <div class="service-meta-item">
+                            <span class="meta-label">Privatpreis</span>
+                            <span class="meta-value">${service.privatePrice}</span>
                         </div>
                     </div>
                 </div>
