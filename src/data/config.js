@@ -1,6 +1,7 @@
 // Single source of truth for all practice data
 export const PRAXIS = {
     name:       'Praxis Vital & Active',
+    siteUrl:    'https://www.praxis-v-a.com',   /* ← update to your final domain */
     street:     'Kaiserdamm 9',
     city:       '14059 Berlin',
     phone:      '+49 179 12345678',
