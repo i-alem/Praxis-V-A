@@ -41,7 +41,7 @@ export function Navigation() {
                     <button class="dark-mode-toggle desktop-only" id="dark-mode-toggle-desktop" aria-label="Dark Mode umschalten">
                         ${darkToggleSvg}
                     </button>
-                    <a href="${PRAXIS.bookingUrl}" target="_blank" class="nav-link cta-link">Termin buchen</a>
+                    <a href="${PRAXIS.bookingUrl}" target="_blank" class="nav-link cta-link"><span class="cta-text">Termin buchen</span></a>
                 </div>
             </div>
         </nav>

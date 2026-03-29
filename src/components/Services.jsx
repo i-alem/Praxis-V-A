@@ -114,13 +114,12 @@ export function initServices() {
     document.querySelectorAll('.service-card').forEach(card => {
         const toggle = card.querySelector('.service-toggle');
         const details = card.querySelector('.service-details');
-        if (!toggle || !details) return;
+        if (!details) return;
 
-        toggle.addEventListener('click', (e) => {
-            e.stopPropagation();
+        card.addEventListener('click', () => {
             const isExpanded = card.classList.contains('expanded');
             card.classList.toggle('expanded');
-            toggle.setAttribute('aria-expanded', String(!isExpanded));
+            if (toggle) toggle.setAttribute('aria-expanded', String(!isExpanded));
             details.setAttribute('aria-hidden', String(isExpanded));
         });
     });
