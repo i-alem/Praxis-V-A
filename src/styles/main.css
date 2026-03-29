@@ -1007,8 +1007,13 @@ p {
         opacity: 0;
         pointer-events: none;
         transition: transform 0.35s ease, opacity 0.35s ease;
-        padding: 1.5rem 0;
-        gap: 1rem;
+        padding: 1rem 0;
+        gap: 0;
+    }
+
+    .nav-menu .nav-link {
+        padding: 0.9rem 1.5rem;
+        width: 100%;
     }
 
     .dark-mode .nav-menu {
@@ -1320,7 +1325,7 @@ p {
 .nav-right {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .dark-mode-toggle {
