@@ -397,7 +397,7 @@ p {
     left: 0;
     right: 0;
     padding: 8rem 1.5rem 0.75rem;
-    background: linear-gradient(to bottom, transparent 0%, rgba(253, 245, 236, 0.6) 40%, rgba(253, 245, 236, 0.98) 100%);
+    background: linear-gradient(to bottom, transparent 0%, rgba(26, 35, 50, 0.6) 40%, rgba(26, 35, 50, 0.98) 100%);
     cursor: pointer;
     text-align: center;
 }
@@ -405,13 +405,13 @@ p {
 .service-overlay h3 {
     font-size: 1.5rem;
     font-weight: 400;
-    color: #1f2937;
+    color: #ffffff;
     margin-bottom: 0.3rem;
 }
 
 .service-overlay .service-desc {
     font-size: 0.82rem;
-    color: #4b5563;
+    color: rgba(255, 255, 255, 0.85);
     line-height: 1.5;
     margin: 0;
 }
@@ -426,13 +426,13 @@ p {
     border: none;
     background: transparent;
     cursor: pointer;
-    color: #9ca3af;
+    color: rgba(255, 255, 255, 0.7);
     transition: color 0.2s ease;
     padding: 0;
 }
 
 .service-toggle:hover {
-    color: #3f5068;
+    color: #ffffff;
 }
 
 .service-expand-icon {
@@ -1459,25 +1459,6 @@ html.dark-mode, .dark-mode {
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2), 0 1px 4px rgba(0, 0, 0, 0.15);
 }
 
-.dark-mode .service-overlay {
-    background: linear-gradient(to bottom, transparent 0%, rgba(17, 24, 39, 0.6) 40%, rgba(17, 24, 39, 0.98) 100%);
-}
-
-.dark-mode .service-overlay h3 {
-    color: #ffffff;
-}
-
-.dark-mode .service-overlay .service-desc {
-    color: #d1d5db;
-}
-
-.dark-mode .service-toggle {
-    color: #6b7280;
-}
-
-.dark-mode .service-toggle:hover {
-    color: white;
-}
 
 .dark-mode .service-long-desc {
     color: #d1d5db;
