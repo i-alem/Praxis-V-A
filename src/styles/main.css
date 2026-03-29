@@ -201,26 +201,19 @@ p {
 }
 
 .cta-link::after {
-    display: none;
-}
-
-.cta-text {
-    position: relative;
-}
-
-.cta-text::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -2px;
-    left: 0;
+    width: auto;
+    bottom: 6px;
+    left: 1rem;
+    right: 1rem;
     background: currentColor;
-    transition: width 0.3s ease;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
 }
 
-.cta-link:hover .cta-text::after {
-    width: 100%;
+.cta-link:hover::after {
+    width: auto;
+    transform: scaleX(1);
 }
 
 
@@ -1408,6 +1401,10 @@ html.dark-mode, .dark-mode {
 .dark-mode .cta-link {
     background: white;
     color: var(--clr-accent) !important;
+}
+
+.dark-mode .cta-link::after {
+    background: var(--clr-accent);
 }
 
 .dark-mode .cta-link:hover {
