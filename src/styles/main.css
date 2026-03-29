@@ -500,8 +500,18 @@ p {
     color: #4b5563;
 }
 
+.service-meta-option {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: #4b5563;
+}
 
-
+.meta-option-price {
+    color: #3f5068;
+    font-weight: 600;
+}
 
 /* Practice */
 .practice {
@@ -1477,6 +1487,13 @@ html.dark-mode, .dark-mode {
     color: #d1d5db;
 }
 
+.dark-mode .service-meta-option {
+    color: #d1d5db;
+}
+
+.dark-mode .meta-option-price {
+    color: #93a8c4;
+}
 
 .dark-mode .practice {
     background: transparent;
