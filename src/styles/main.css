@@ -978,7 +978,7 @@ p {
 @media (max-width: 768px) {
     .container {
         max-width: 100%;
-        padding: 0 1rem;
+        padding: 0 1.5rem;
     }
 
     .nav-right {
@@ -1198,7 +1198,7 @@ p {
 
 @media (max-width: 480px) {
     .container {
-        padding: 0 0.75rem;
+        padding: 0 1.5rem;
     }
 
     .nav-logo img,
