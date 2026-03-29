@@ -170,6 +170,13 @@ p {
     left: 1rem;
     right: 1rem;
     opacity: 0.7;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.cta-link:hover::after {
+    transform: scaleX(1);
 }
 
 .hamburger {
@@ -252,18 +259,19 @@ p {
 .btn::after {
     content: '';
     position: absolute;
-    width: 0;
     height: 2px;
     bottom: 8px;
     left: 1.5rem;
     right: 1.5rem;
     background: currentColor;
-    transition: width 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
     opacity: 0.7;
 }
 
 .btn:hover::after {
-    width: 100%;
+    transform: scaleX(1);
 }
 
 .btn-primary {
