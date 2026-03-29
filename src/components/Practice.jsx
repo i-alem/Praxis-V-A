@@ -24,8 +24,16 @@ export function Practice() {
         </div>
     `).join('');
 
-    const galleryImages = images.map(img =>
+    const gridImages = images.map(img =>
         `<img src="${img.src}" alt="${img.alt}" loading="lazy">`
+    ).join('');
+
+    const carouselImages = images.map(img =>
+        `<img src="${img.src}" alt="${img.alt}" loading="lazy" class="carousel-slide">`
+    ).join('');
+
+    const dots = images.map((_, i) =>
+        `<button class="carousel-dot${i === 0 ? ' active' : ''}" data-index="${i}" aria-label="Bild ${i + 1}"></button>`
     ).join('');
 
     return `
@@ -42,10 +50,33 @@ export function Practice() {
                         <div class="practice-features">${featureList}</div>
                     </div>
                     <div class="practice-gallery">
-                        <div class="gallery-grid">${galleryImages}</div>
+                        <div class="gallery-grid">${gridImages}</div>
+                        <div class="gallery-carousel">
+                            <div class="carousel-track">${carouselImages}</div>
+                            <div class="carousel-dots">${dots}</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     `;
+}
+
+export function initPractice() {
+    const track = document.querySelector('.carousel-track');
+    const dots  = document.querySelectorAll('.carousel-dot');
+    if (!track || !dots.length) return;
+
+    // Update active dot based on scroll position
+    track.addEventListener('scroll', () => {
+        const index = Math.round(track.scrollLeft / track.offsetWidth);
+        dots.forEach((d, i) => d.classList.toggle('active', i === index));
+    }, { passive: true });
+
+    // Tap dot → scroll to slide
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            track.scrollTo({ left: dot.dataset.index * track.offsetWidth, behavior: 'smooth' });
+        });
+    });
 }

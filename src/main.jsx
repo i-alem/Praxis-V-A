@@ -2,7 +2,7 @@ import './styles/main.css';
 import { Navigation, initNavigation } from './components/Navigation.jsx';
 import { Hero } from './components/Hero.jsx';
 import { Services, initServices } from './components/Services.jsx';
-import { Practice } from './components/Practice.jsx';
+import { Practice, initPractice } from './components/Practice.jsx';
 import { Footer } from './components/Footer.jsx';
 import { initSmoothScrolling, initScrollAnimations } from './utils/animations.jsx';
 
@@ -24,6 +24,7 @@ function initMainPage() {
     initSmoothScrolling();
     initScrollAnimations();
     initServices();
+    initPractice();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
