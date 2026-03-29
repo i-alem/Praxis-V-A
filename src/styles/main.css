@@ -241,8 +241,29 @@ p {
     border-radius: 0.5rem;
     text-decoration: none;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: box-shadow 0.3s ease;
     border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 1.5rem;
+    right: 1.5rem;
+    height: 2px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+    border-radius: 1px;
+    opacity: 0.6;
+}
+
+.btn:hover::after {
+    transform: scaleX(1);
 }
 
 .btn-primary {
@@ -250,22 +271,10 @@ p {
     color: white;
 }
 
-.btn-primary:hover {
-    background: #2b3c54;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(63, 80, 104, 0.3);
-}
-
 .btn-secondary {
     background: transparent;
     color: #3f5068;
     border-color: #3f5068;
-}
-
-.btn-secondary:hover {
-    background: #3f5068;
-    color: white;
-    transform: translateY(-2px);
 }
 
 .hero-image img {
@@ -308,6 +317,7 @@ p {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
+    align-items: start;
 }
 
 .service-card {
@@ -1322,18 +1332,9 @@ p {
     color: #1f2937;
 }
 
-.dark-mode .btn-primary:hover {
-    background: #84a7ba;
-}
-
 .dark-mode .btn-secondary {
     border-color: #98bbce;
     color: #98bbce;
-}
-
-.dark-mode .btn-secondary:hover {
-    background: #98bbce;
-    color: #1f2937;
 }
 
 .dark-mode .services {
