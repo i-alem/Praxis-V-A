@@ -370,6 +370,14 @@ p {
     align-items: start;
 }
 
+.services-carousel {
+    display: none;
+}
+
+.services-carousel-dots {
+    display: none;
+}
+
 .service-card {
     display: flex;
     flex-direction: column;
@@ -1179,7 +1187,45 @@ p {
     }
 
     .services-grid {
-        grid-template-columns: 1fr;
+        display: none;
+    }
+
+    .services-carousel {
+        display: block;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        /* negative margin + padding creates the peek effect */
+        margin: 0 -1.5rem;
+        padding: 0.5rem 1.5rem 1rem;
+        display: flex;
+        gap: 1rem;
+        align-items: start;
+    }
+
+    .services-carousel::-webkit-scrollbar {
+        display: none;
+    }
+
+    .services-carousel .service-card {
+        width: 82%;
+        flex-shrink: 0;
+        scroll-snap-align: center;
+    }
+
+    .services-carousel-dots {
+        display: flex;
+        justify-content: center;
+        gap: 0.4rem;
+        margin-top: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .services-carousel-dots .carousel-dot {
+        width: 7px;
+        height: 7px;
     }
 
     .practice-content {

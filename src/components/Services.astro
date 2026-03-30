@@ -172,6 +172,58 @@ const services = [
                 </div>
             ))}
         </div>
+
+        <div class="services-carousel">
+            {services.map((service, i) => (
+                <div class="service-card" data-index={i}>
+                    <div class="service-image">
+                        <img src={service.image} alt={service.title} loading="lazy">
+                        <div class="service-overlay">
+                            <h3>{service.title}</h3>
+                            <p class="service-desc">{service.description}</p>
+                            <button class="service-toggle" aria-expanded="false" aria-label="Details anzeigen">
+                                <svg class="service-expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="service-details" aria-hidden="true">
+                        <div class="service-details-inner">
+                            <p class="service-long-desc">{service.details}</p>
+                            <div class="service-meta">
+                                <div class="service-meta-item">
+                                    <span class="meta-label">Geeignet bei</span>
+                                    <span class="meta-value">{service.indication}</span>
+                                </div>
+                                <div class="service-meta-item">
+                                    <span class="meta-label">Dauer &amp; Preis</span>
+                                    {Array.isArray(service.duration)
+                                        ? service.duration.map((d, j) => (
+                                            <div class="service-meta-option">
+                                                <span class="meta-option-duration">{d}</span>
+                                                <span class="meta-option-price">{service.privatePrice[j]}</span>
+                                            </div>
+                                        ))
+                                        : (
+                                            <div class="service-meta-option">
+                                                <span class="meta-option-duration">{service.duration}</span>
+                                                <span class="meta-option-price">{service.privatePrice}</span>
+                                            </div>
+                                        )
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
+        <div class="services-carousel-dots">
+            {services.map((_, i) => (
+                <button class={`carousel-dot${i === 0 ? ' active' : ''}`} aria-label={`Service ${i + 1}`} data-dot={i}></button>
+            ))}
+        </div>
     </div>
 </section>
 
@@ -187,4 +239,37 @@ const services = [
             details.setAttribute('aria-hidden', String(isExpanded));
         });
     });
+
+    // Carousel dot tracking
+    const carousel = document.querySelector('.services-carousel') as HTMLElement | null;
+    const dots = document.querySelectorAll('.services-carousel-dots .carousel-dot');
+
+    if (carousel && dots.length) {
+        const updateActiveDot = () => {
+            const cards = carousel.querySelectorAll('.service-card');
+            const carouselLeft = carousel.scrollLeft;
+            const carouselWidth = carousel.clientWidth;
+            let closest = 0;
+            let minDist = Infinity;
+            cards.forEach((card, i) => {
+                const el = card as HTMLElement;
+                const cardCenter = el.offsetLeft + el.offsetWidth / 2;
+                const dist = Math.abs(cardCenter - carouselLeft - carouselWidth / 2);
+                if (dist < minDist) { minDist = dist; closest = i; }
+            });
+            dots.forEach((dot, i) => dot.classList.toggle('active', i === closest));
+        };
+
+        carousel.addEventListener('scroll', updateActiveDot, { passive: true });
+
+        dots.forEach((dot, i) => {
+            dot.addEventListener('click', () => {
+                const cards = carousel.querySelectorAll('.service-card');
+                const card = cards[i] as HTMLElement | undefined;
+                if (card) {
+                    carousel.scrollTo({ left: card.offsetLeft - (carousel.clientWidth - card.offsetWidth) / 2, behavior: 'smooth' });
+                }
+            });
+        });
+    }
 </script>
