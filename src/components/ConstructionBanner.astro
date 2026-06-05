@@ -1,0 +1,40 @@
+---
+---
+
+<div class="construction-overlay" id="constructionOverlay">
+    <div class="construction-modal">
+        <div class="construction-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                <line x1="12" y1="9" x2="12" y2="13"/>
+                <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+        </div>
+        <h2>Website im Aufbau</h2>
+        <p>Wir arbeiten gerade an unserer Website und sind bald für Sie da. Bei Fragen erreichen Sie uns telefonisch.</p>
+        <button class="construction-close" id="constructionClose">Verstanden</button>
+    </div>
+</div>
+
+<script>
+(function () {
+    const overlay = document.getElementById('constructionOverlay');
+    const closeBtn = document.getElementById('constructionClose');
+    if (!overlay) return;
+
+    if (localStorage.getItem('constructionDismissed') === '1') {
+        overlay.remove();
+        return;
+    }
+
+    closeBtn?.addEventListener('click', () => {
+        overlay.classList.add('construction-overlay--hidden');
+        setTimeout(() => overlay.remove(), 400);
+        localStorage.setItem('constructionDismissed', '1');
+    });
+
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeBtn?.click();
+    });
+})();
+</script>

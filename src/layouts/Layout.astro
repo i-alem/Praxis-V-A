@@ -1,4 +1,6 @@
 ---
+import ConstructionBanner from '../components/ConstructionBanner.astro';
+
 interface Props {
     title: string;
     description: string;
@@ -49,6 +51,7 @@ const ogImage = 'https://www.praxis-v-a.com/og-image.jpg';
     </script>
 </head>
 <body>
+    <ConstructionBanner />
     <slot />
 </body>
 </html>

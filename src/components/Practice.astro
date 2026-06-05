@@ -78,20 +78,20 @@ const images = [
 </section>
 
 <script>
-    const slider   = document.querySelector('.gallery-slider') as HTMLElement | null;
-    const track    = slider?.querySelector('.gallery-slides') as HTMLElement | null;
-    const prevBtn  = slider?.querySelector('.gallery-prev') as HTMLElement | null;
-    const nextBtn  = slider?.querySelector('.gallery-next') as HTMLElement | null;
-    const dots     = slider?.querySelectorAll('.gallery-dots .carousel-dot') ?? [];
-    const total    = dots.length;
+(function () {
+    const slider  = document.querySelector('.gallery-slider') as HTMLElement | null;
+    const track   = slider?.querySelector('.gallery-slides') as HTMLElement | null;
+    const prevBtn = slider?.querySelector('.gallery-prev') as HTMLButtonElement | null;
+    const nextBtn = slider?.querySelector('.gallery-next') as HTMLButtonElement | null;
+    const dots    = Array.from(slider?.querySelectorAll('.gallery-dots .carousel-dot') ?? []);
 
-    if (!slider || !track || total === 0) return;
+    if (!slider || !track || dots.length === 0) return;
 
     let current = 0;
-    let timer: ReturnType<typeof setInterval>;
+    let timer = 0;
 
     const goTo = (n: number) => {
-        current = ((n % total) + total) % total;
+        current = ((n % dots.length) + dots.length) % dots.length;
         track.style.transform = `translateX(-${current * 100}%)`;
         dots.forEach((d, i) => d.classList.toggle('active', i === current));
     };
@@ -101,27 +101,23 @@ const images = [
 
     const resetTimer = () => {
         clearInterval(timer);
-        timer = setInterval(next, 4500);
+        timer = window.setInterval(next, 4500);
     };
 
     prevBtn?.addEventListener('click', () => { prev(); resetTimer(); });
     nextBtn?.addEventListener('click', () => { next(); resetTimer(); });
+    dots.forEach((dot, i) => dot.addEventListener('click', () => { goTo(i); resetTimer(); }));
 
-    dots.forEach((dot, i) => {
-        dot.addEventListener('click', () => { goTo(i); resetTimer(); });
-    });
-
-    // Pause on hover
     slider.addEventListener('mouseenter', () => clearInterval(timer));
     slider.addEventListener('mouseleave', resetTimer);
 
-    // Touch swipe
     let touchX = 0;
-    slider.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+    slider.addEventListener('touchstart', e => { touchX = (e as TouchEvent).touches[0].clientX; }, { passive: true });
     slider.addEventListener('touchend', e => {
-        const diff = touchX - e.changedTouches[0].clientX;
+        const diff = touchX - (e as TouchEvent).changedTouches[0].clientX;
         if (Math.abs(diff) > 40) { diff > 0 ? next() : prev(); resetTimer(); }
     }, { passive: true });
 
     resetTimer();
+})();
 </script>
