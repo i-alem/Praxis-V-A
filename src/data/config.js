@@ -4,7 +4,7 @@ export const PRAXIS = {
     siteUrl:    'https://www.praxis-v-a.com',   /* ← update to your final domain */
     street:     'Kaiserdamm 9',
     city:       '14059 Berlin',
-    phone:      '+49 179 12345678',
+    phone:      '+49 30 86338771',
     email:      'info@praxis-v-a.com',
     bookingUrl: 'https://medifox.de/termine',
     mapsUrl:    'https://www.google.com/maps/search/Kaiserdamm+9+14059+Berlin',
