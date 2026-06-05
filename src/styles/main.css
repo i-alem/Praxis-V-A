@@ -654,12 +654,7 @@ p {
     background: rgba(255, 255, 255, 0.95);
 }
 
-.carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-top: 0.85rem;
-}
+
 
 .carousel-dot {
     width: 8px;

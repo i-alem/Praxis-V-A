@@ -5,7 +5,29 @@
       "WebFetch(domain:www.google.com)",
       "WebFetch(domain:maps.googleapis.com)",
       "Bash(ls -la .env*)",
-      "Bash(cat astro.config.*)"
+      "Bash(cat astro.config.*)",
+      "Bash(npm --version)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://images.pexels.com/photos/6111601/pexels-photo-6111601.jpeg?auto=compress&cs=tinysrgb&w=800\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://images.pexels.com/photos/6111355/pexels-photo-6111355.jpeg?auto=compress&cs=tinysrgb&w=800\")",
+      "Bash(curl -sL \"https://images.pexels.com/photos/7579831/pexels-photo-7579831.jpeg?auto=compress&cs=tinysrgb&w=600\" -o services/krankengymnastik.jpg)",
+      "Bash(curl -sL \"https://images.pexels.com/photos/6816851/pexels-photo-6816851.jpeg?auto=compress&cs=tinysrgb&w=600\" -o services/manuelle-therapie.jpg)",
+      "Bash(curl -sL \"https://images.pexels.com/photos/3997989/pexels-photo-3997989.jpeg?auto=compress&cs=tinysrgb&w=600\" -o services/massage.jpg)",
+      "Bash(curl -sL \"https://images.pexels.com/photos/5473182/pexels-photo-5473182.jpeg?auto=compress&cs=tinysrgb&w=600\" -o services/lymphdrainage.jpg)",
+      "Bash(curl -sL \"https://images.pexels.com/photos/7298879/pexels-photo-7298879.jpeg?auto=compress&cs=tinysrgb&w=600\" -o services/elektrotherapie.jpg)",
+      "Bash(curl -sL \"https://images.pexels.com/photos/5473178/pexels-photo-5473178.jpeg?auto=compress&cs=tinysrgb&w=600\" -o services/kinesio-taping.jpg)",
+      "Bash(curl -sL \"https://images.pexels.com/photos/3076514/pexels-photo-3076514.jpeg?auto=compress&cs=tinysrgb&w=600\" -o services/kg-geraet.jpg)",
+      "Bash(curl -sL \"https://images.pexels.com/photos/7446990/pexels-photo-7446990.jpeg?auto=compress&cs=tinysrgb&w=600\" -o services/eisbehandlung.jpg)",
+      "Bash(curl -sL \"https://images.pexels.com/photos/6787202/pexels-photo-6787202.jpeg?auto=compress&cs=tinysrgb&w=600\" -o services/atemtherapie.jpg)",
+      "Bash(curl -sL \"https://images.pexels.com/photos/7176026/pexels-photo-7176026.jpeg?auto=compress&cs=tinysrgb&w=600\" -o services/triggerpunkt.jpg)",
+      "Bash(curl -sL \"https://images.pexels.com/photos/6111565/pexels-photo-6111565.jpeg?auto=compress&cs=tinysrgb&w=800\" -o praxis/praxis-1.jpg)",
+      "Bash(curl -sL \"https://images.pexels.com/photos/6111368/pexels-photo-6111368.jpeg?auto=compress&cs=tinysrgb&w=800\" -o praxis/praxis-2.jpg)",
+      "Bash(curl -sL \"https://images.pexels.com/photos/6111707/pexels-photo-6111707.jpeg?auto=compress&cs=tinysrgb&w=800\" -o praxis/praxis-3.jpg)",
+      "Bash(curl -sL \"https://images.pexels.com/photos/6111164/pexels-photo-6111164.jpeg?auto=compress&cs=tinysrgb&w=800\" -o praxis/praxis-4.jpg)",
+      "Bash(curl -sL \"https://images.pexels.com/photos/6111601/pexels-photo-6111601.jpeg?auto=compress&cs=tinysrgb&w=800\" -o praxis/praxis-5.jpg)",
+      "Bash(curl -sL \"https://images.pexels.com/photos/5327571/pexels-photo-5327571.jpeg?auto=compress&cs=tinysrgb&w=800\" -o praxis-1.jpg)",
+      "Bash(curl -sL \"https://images.pexels.com/photos/4498581/pexels-photo-4498581.jpeg?auto=compress&cs=tinysrgb&w=800\" -o praxis-2.jpg)",
+      "Bash(curl -sL \"https://images.pexels.com/photos/4498582/pexels-photo-4498582.jpeg?auto=compress&cs=tinysrgb&w=800\" -o praxis-3.jpg)",
+      "Bash(curl -sL \"https://images.pexels.com/photos/3938021/pexels-photo-3938021.jpeg?auto=compress&cs=tinysrgb&w=800\" -o praxis-4.jpg)"
     ]
   }
 }
