@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:www.google.com)",
+      "WebFetch(domain:maps.googleapis.com)"
+    ]
+  }
+}
