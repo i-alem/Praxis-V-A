@@ -9,8 +9,8 @@ export const PRAXIS = {
     bookingUrl: 'https://otr.md-therapie.de/PdQAkPyHHl7vpyWA6FCFNVHJk%2B%2BoFPda',
     mapsUrl:    'https://www.google.com/maps/search/Kaiserdamm+9+14059+Berlin',
     hours: [
-        { days: 'Mo – Fr',  time: '09:00 – 20:00' },
-        { days: 'Samstag',  time: '10:00 – 13:00' },
+        { days: 'Mo – Fr',  time: '10:00 – 20:00' },
+        { days: 'Samstag',  time: 'Geschlossen' },
         { days: 'Sonntag',  time: 'Geschlossen'    },
     ],
 };
