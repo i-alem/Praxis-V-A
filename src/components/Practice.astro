@@ -9,10 +9,12 @@ const features = [
 ];
 
 const images = [
-    { src: 'https://images.pexels.com/photos/6111565/pexels-photo-6111565.jpeg?auto=compress&cs=tinysrgb&w=400', alt: 'Behandlungsraum'  },
-    { src: 'https://images.pexels.com/photos/6111368/pexels-photo-6111368.jpeg?auto=compress&cs=tinysrgb&w=400', alt: 'Therapiegeräte'   },
-    { src: 'https://images.pexels.com/photos/6111707/pexels-photo-6111707.jpeg?auto=compress&cs=tinysrgb&w=400', alt: 'Empfangsbereich'  },
-    { src: 'https://images.pexels.com/photos/6111164/pexels-photo-6111164.jpeg?auto=compress&cs=tinysrgb&w=400', alt: 'Trainingsbereich' },
+    { src: 'https://images.pexels.com/photos/6111565/pexels-photo-6111565.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Behandlungsraum' },
+    { src: 'https://images.pexels.com/photos/6111368/pexels-photo-6111368.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Therapiegeräte'  },
+    { src: 'https://images.pexels.com/photos/6111707/pexels-photo-6111707.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Empfangsbereich' },
+    { src: 'https://images.pexels.com/photos/6111164/pexels-photo-6111164.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Trainingsbereich'},
+    { src: 'https://images.pexels.com/photos/6111601/pexels-photo-6111601.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Therapieraum'   },
+    { src: 'https://images.pexels.com/photos/6111355/pexels-photo-6111355.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Wartebereich'    },
 ];
 ---
 
@@ -37,25 +39,38 @@ const images = [
                     ))}
                 </div>
             </div>
-            <div class="practice-gallery">
-                <!-- Desktop: 2×2 grid -->
-                <div class="gallery-grid">
-                    {images.map(img => (
-                        <img src={img.src} alt={img.alt} loading="lazy">
+
+            <div class="gallery-slider">
+                <div class="gallery-slides">
+                    {images.map((img, i) => (
+                        <img
+                            src={img.src}
+                            alt={img.alt}
+                            class="gallery-slide"
+                            loading={i === 0 ? 'eager' : 'lazy'}
+                        />
                     ))}
                 </div>
-                <!-- Mobile: carousel -->
-                <div class="gallery-carousel">
-                    <div class="carousel-track">
-                        {images.map(img => (
-                            <img src={img.src} alt={img.alt} loading="lazy" class="carousel-slide">
-                        ))}
-                    </div>
-                    <div class="carousel-dots">
-                        {images.map((_, i) => (
-                            <button class={`carousel-dot${i === 0 ? ' active' : ''}`} data-index={i} aria-label={`Bild ${i + 1}`}></button>
-                        ))}
-                    </div>
+
+                <button class="gallery-prev" aria-label="Vorheriges Bild">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"/>
+                    </svg>
+                </button>
+                <button class="gallery-next" aria-label="Nächstes Bild">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"/>
+                    </svg>
+                </button>
+
+                <div class="gallery-dots">
+                    {images.map((_, i) => (
+                        <button
+                            class={`carousel-dot${i === 0 ? ' active' : ''}`}
+                            data-index={i}
+                            aria-label={`Bild ${i + 1}`}
+                        ></button>
+                    ))}
                 </div>
             </div>
         </div>
@@ -63,18 +78,50 @@ const images = [
 </section>
 
 <script>
-    const track = document.querySelector('.carousel-track');
-    const dots  = document.querySelectorAll('.carousel-dot');
-    if (track && dots.length) {
-        track.addEventListener('scroll', () => {
-            const index = Math.round(track.scrollLeft / track.offsetWidth);
-            dots.forEach((d, i) => d.classList.toggle('active', i === index));
-        }, { passive: true });
+    const slider   = document.querySelector('.gallery-slider') as HTMLElement | null;
+    const track    = slider?.querySelector('.gallery-slides') as HTMLElement | null;
+    const prevBtn  = slider?.querySelector('.gallery-prev') as HTMLElement | null;
+    const nextBtn  = slider?.querySelector('.gallery-next') as HTMLElement | null;
+    const dots     = slider?.querySelectorAll('.gallery-dots .carousel-dot') ?? [];
+    const total    = dots.length;
 
-        dots.forEach(dot => {
-            dot.addEventListener('click', () => {
-                track.scrollTo({ left: Number(dot.dataset.index) * track.offsetWidth, behavior: 'smooth' });
-            });
-        });
-    }
+    if (!slider || !track || total === 0) return;
+
+    let current = 0;
+    let timer: ReturnType<typeof setInterval>;
+
+    const goTo = (n: number) => {
+        current = ((n % total) + total) % total;
+        track.style.transform = `translateX(-${current * 100}%)`;
+        dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    };
+
+    const next = () => goTo(current + 1);
+    const prev = () => goTo(current - 1);
+
+    const resetTimer = () => {
+        clearInterval(timer);
+        timer = setInterval(next, 4500);
+    };
+
+    prevBtn?.addEventListener('click', () => { prev(); resetTimer(); });
+    nextBtn?.addEventListener('click', () => { next(); resetTimer(); });
+
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => { goTo(i); resetTimer(); });
+    });
+
+    // Pause on hover
+    slider.addEventListener('mouseenter', () => clearInterval(timer));
+    slider.addEventListener('mouseleave', resetTimer);
+
+    // Touch swipe
+    let touchX = 0;
+    slider.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+    slider.addEventListener('touchend', e => {
+        const diff = touchX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) { diff > 0 ? next() : prev(); resetTimer(); }
+    }, { passive: true });
+
+    resetTimer();
 </script>

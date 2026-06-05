@@ -3,7 +3,9 @@
     "allow": [
       "WebSearch",
       "WebFetch(domain:www.google.com)",
-      "WebFetch(domain:maps.googleapis.com)"
+      "WebFetch(domain:maps.googleapis.com)",
+      "Bash(ls -la .env*)",
+      "Bash(cat astro.config.*)"
     ]
   }
 }

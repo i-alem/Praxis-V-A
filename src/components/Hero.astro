@@ -1,6 +1,10 @@
 ---
 import { PRAXIS } from '../data/config.js';
-import { reviews, generateStars } from '../data/reviews.js';
+import { reviews as staticReviews, generateStars } from '../data/reviews.js';
+import { fetchGoogleReviews } from '../utils/getReviews.js';
+
+const googleReviews = await fetchGoogleReviews();
+const reviews = googleReviews ?? staticReviews;
 ---
 
 <section id="home" class="hero">
