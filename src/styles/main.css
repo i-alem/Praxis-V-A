@@ -686,7 +686,7 @@ p {
     display: flex;
     justify-content: center;
     gap: 3px;
-    color: white;
+    color: #FFC107;
     margin-bottom: 1rem;
 }
 
@@ -1749,7 +1749,7 @@ html.dark-mode, .dark-mode {
     display: flex;
     justify-content: flex-start;
     gap: 3px;
-    color: white;
+    color: #FFC107;
     margin-bottom: 0rem;
 }
 

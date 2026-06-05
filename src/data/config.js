@@ -6,7 +6,7 @@ export const PRAXIS = {
     city:       '14059 Berlin',
     phone:      '+49 30 86338771',
     email:      'info@praxis-v-a.com',
-    bookingUrl: 'https://medifox.de/termine',
+    bookingUrl: 'https://otr.md-therapie.de/PdQAkPyHHl7vpyWA6FCFNVHJk%2B%2BoFPda',
     mapsUrl:    'https://www.google.com/maps/search/Kaiserdamm+9+14059+Berlin',
     hours: [
         { days: 'Mo – Fr',  time: '09:00 – 20:00' },
