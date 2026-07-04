@@ -1,11 +1,9 @@
 ---
 import { PRAXIS } from '../data/config.js';
 
-const features = [
+const tags = [
     'Moderne Behandlungsräume',
     'Neueste Therapiegeräte',
-    'Barrierefreier Zugang',
-    'Parkplätze vor Ort',
 ];
 
 const images = [
@@ -24,54 +22,52 @@ const images = [
             <h2 class="section-title">Unsere Praxis</h2>
             <p class="section-subtitle">Moderne Ausstattung in angenehmer Atmosphäre</p>
         </div>
-        <div class="practice-content">
-            <div class="practice-text">
-                <h3>Herzlich willkommen in der <br>{PRAXIS.name}</h3>
-                <p>In unserer modernen Physiotherapiepraxis erwartet Sie eine professionelle und persönliche Betreuung. Unser erfahrenes Team aus qualifizierten Physiotherapeuten steht Ihnen mit individuellen Behandlungskonzepten zur Seite.</p>
-                <div class="practice-features">
-                    {features.map(f => (
-                        <div class="feature">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20,6 9,17 4,12"/>
-                            </svg>
-                            <span>{f}</span>
-                        </div>
-                    ))}
-                </div>
+
+        <div class="gallery-slider">
+            <div class="gallery-slides">
+                {images.map((img, i) => (
+                    <img
+                        src={img.src}
+                        alt={img.alt}
+                        class="gallery-slide"
+                        loading={i === 0 ? 'eager' : 'lazy'}
+                    />
+                ))}
             </div>
 
-            <div class="gallery-slider">
-                <div class="gallery-slides">
-                    {images.map((img, i) => (
-                        <img
-                            src={img.src}
-                            alt={img.alt}
-                            class="gallery-slide"
-                            loading={i === 0 ? 'eager' : 'lazy'}
-                        />
-                    ))}
-                </div>
+            <button class="gallery-prev" aria-label="Vorheriges Bild">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"/>
+                </svg>
+            </button>
+            <button class="gallery-next" aria-label="Nächstes Bild">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"/>
+                </svg>
+            </button>
 
-                <button class="gallery-prev" aria-label="Vorheriges Bild">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="15 18 9 12 15 6"/>
-                    </svg>
-                </button>
-                <button class="gallery-next" aria-label="Nächstes Bild">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="9 18 15 12 9 6"/>
-                    </svg>
-                </button>
+            <div class="gallery-dots">
+                {images.map((_, i) => (
+                    <button
+                        class={`carousel-dot${i === 0 ? ' active' : ''}`}
+                        data-index={i}
+                        aria-label={`Bild ${i + 1}`}
+                    ></button>
+                ))}
+            </div>
+        </div>
 
-                <div class="gallery-dots">
-                    {images.map((_, i) => (
-                        <button
-                            class={`carousel-dot${i === 0 ? ' active' : ''}`}
-                            data-index={i}
-                            aria-label={`Bild ${i + 1}`}
-                        ></button>
-                    ))}
-                </div>
+        <div class="practice-info">
+            <p class="practice-description">In unserer modernen Physiotherapiepraxis erwartet Sie eine professionelle und persönliche Betreuung. Unser erfahrenes Team aus qualifizierten Physiotherapeuten steht Ihnen mit individuellen Behandlungskonzepten zur Seite.</p>
+            <div class="practice-tags">
+                {tags.map(tag => (
+                    <span class="practice-tag">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        {tag}
+                    </span>
+                ))}
             </div>
         </div>
     </div>

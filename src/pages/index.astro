@@ -49,12 +49,10 @@ import '../styles/main.css';
                     .forEach(el => el.classList.add('animate'));
             }
             if (section.classList.contains('practice')) {
-                ['.practice-text h3', '.practice-text p', '.practice-features'].forEach((sel, i) => {
-                    setTimeout(() => {
-                        const el = section.querySelector(sel);
-                        if (el) el.classList.add('animate');
-                    }, 600 + i * 300);
-                });
+                setTimeout(() => {
+                    const el = section.querySelector('.practice-info');
+                    if (el) el.classList.add('animate');
+                }, 600);
             }
         });
     }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
