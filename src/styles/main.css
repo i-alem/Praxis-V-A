@@ -1964,7 +1964,8 @@ html.dark-mode, .dark-mode {
 /* Section animations - initial hidden state */
 .section-title,
 .section-subtitle,
-.practice-info {
+.practice-info,
+.gallery-slider {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -1973,7 +1974,8 @@ html.dark-mode, .dark-mode {
 /* Animated state */
 .section-title.animate,
 .section-subtitle.animate,
-.practice-info.animate {
+.practice-info.animate,
+.gallery-slider.animate {
     opacity: 1;
     transform: translateY(0);
 }

@@ -50,6 +50,10 @@ import '../styles/main.css';
             }
             if (section.classList.contains('practice')) {
                 setTimeout(() => {
+                    const slider = section.querySelector('.gallery-slider');
+                    if (slider) slider.classList.add('animate');
+                }, 300);
+                setTimeout(() => {
                     const el = section.querySelector('.practice-info');
                     if (el) el.classList.add('animate');
                 }, 600);
